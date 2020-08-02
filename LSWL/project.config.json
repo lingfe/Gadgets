@@ -1,0 +1,174 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"appid": "wx4a82967c20ccc576",
+	"projectname": "LSWL",
+	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "模块",
+					"pathName": "pages/index/lswl/lswl",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq/hq",
+					"pathName": "pages/index/lswl/lswl_index/hq/hq",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/lswl_index",
+					"pathName": "pages/index/lswl/lswl_index/lswl_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl",
+					"pathName": "pages/index/lswl/lswl",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/openapi/openapi",
+					"pathName": "pages/openapi/openapi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq_list/hq_list",
+					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "pages/index/lswl/lswl",
+					"pathName": "pages/index/lswl/lswl",
+					"query": "name=1",
+					"scene": 1007
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq/hq",
+					"pathName": "pages/index/lswl/lswl_index/hq/hq",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/lswl_index",
+					"pathName": "pages/index/lswl/lswl_index/lswl_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
+					"pathName": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
+					"pathName": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_data_manage/operation/operation",
+					"pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq_list/hq_list",
+					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq/hq",
+					"pathName": "pages/index/lswl/lswl_index/hq/hq",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_data_manage/operation/operation",
+					"pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,31 @@
+<!--miniprogram/pages/index/lswl/lswl_index/hq_list/hq_list.wxml-->
+<view class="page">
+
+  <navigator url="hq_list_details/hq_list_details?id={{item._id}}" 
+  style="background-image: url({{item.event_img}});"
+  class="model2" wx:for="{{queryResult}}" wx:key="">
+      <view class='model2_title'>{{item.event_name}}</view> 
+      <view class='model2_text'>
+        <view class='model2_content_right_text_text'>
+          收到礼金<span class="model2_text-danger">
+          {{item.price}}99999</span>元
+        </view>
+        <view class='model2_content_right_text_text'>
+          查看<span class="model2_text-danger">11{{item.sell_num}}</span>次
+        </view>
+        <view class='model2_content_right_text_text model2_no-right'>
+          <span class="model2_text-danger">12{{item.share_num}}</span>次分享
+        </view>
+      </view>
+  </navigator>
+
+  <view wx:if='{{queryResult==null || queryResult.length==0}}' 
+  class="model_null">
+    暂无数据
+  </view>
+
+  <!-- 点我创建一个吧 -->
+  <navigator url="../hq_list/my_hq_list/my_hq_list" 
+  wx:if="{{ page_data[0].is_close_my_button == 0}}"
+  class='btn_3d btn_to'>my</navigator>
+</view>

@@ -1,0 +1,2 @@
+/* miniprogram/pages/index/lswl/lswl_data_manage/lswl_data_manage.wxss */
+@import '/pages/index/lswl/lswl_index/hq_list/my_hq_list/check_menu_type/check_menu_type.wxss';

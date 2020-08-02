@@ -1,0 +1,19 @@
+<!--miniprogram/pages/index/lswl/lswl_data_manage/operation/operation.wxml-->
+<view class="page">
+  <!-- 操作 start -->
+  <view class="item_btn">
+    <button class='btn red' id='{{data._id}}' 
+        data-state='1'
+        bindtap='bind_delete'>删除</button>
+      <button class='btn gree' id='{{data._id}}' 
+        data-state='1'
+        bindtap='bind_delete'>删除</button>
+      <button class='btn grey' id='{{data._id}}' 
+        data-state='1'
+        bindtap='bind_delete'>删除</button>
+      <button class='btn purple' id='{{data._id}}' 
+        data-state='1'
+        bindtap='bind_delete'>删除</button>
+  </view>
+  <!-- 操作 start -->
+</view>

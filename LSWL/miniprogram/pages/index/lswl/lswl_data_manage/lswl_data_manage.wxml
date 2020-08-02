@@ -1,0 +1,14 @@
+<!--miniprogram/pages/index/lswl/lswl_data_manage/lswl_data_manage.wxml-->
+<view class='page'>
+
+  <!-- 表信息列表 start -->
+  <view class='menu_heng'>
+    <navigator url="../lswl_data_manage/table_manage/table_manage?tab_name={{item.tab_name}}" 
+    wx:for="{{tab_list}}"  wx:key="{{item._id}}" class='menu_heng_navigator'>
+       <image class='menu_heng_img' src='{{item.menu_img}}'></image>
+       <view class='menu_heng_text'>{{item.tab_cname}}</view>
+       <view class='menu_heng_v'>管理</view>
+    </navigator>
+  </view>
+  <!-- 表信息列表 end -->
+</view>

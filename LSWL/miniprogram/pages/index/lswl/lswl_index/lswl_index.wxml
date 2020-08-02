@@ -1,0 +1,40 @@
+<!--miniprogram/pages/index/lswl/lswl_index/lswl_index.wxml-->
+<view class="page">
+  <!-- 轮播图 start -->
+  <swiper class="banner" 
+          indicator-dots="true"
+          interval="3000" 
+          autoplay="true" 
+          duration="3000"
+          circular="true">
+          <block wx:for="{{images_list}}"  wx:key="">
+            <swiper-item>
+              <image src="{{item.img_url}}" mode="aspectFill" class="banner_image"/>
+            </swiper-item>
+          </block>
+  </swiper>
+  <!-- 轮播图 end -->
+
+  <!-- 分类菜单 start -->
+    <view class="index-menu">
+      <navigator class="index-menu-item" wx:for="{{type_menu}}" wx:key="" 
+        url="{{item.menu_url}}?menu_id={{item._id}}">
+        <image src="{{item.menu_img}}"></image>
+        <text>{{item.menu_name}}</text>
+      </navigator>
+      <block wx:if="{{1==2}}">
+        <navigator catchtap='btn_navigate' class="index-menu-item" 
+          url="">
+          <image src="/assets/images/ico/ico_menu/icon_09.png"></image>
+          <text>疑问解答</text>
+        </navigator>
+
+        <navigator class="index-menu-item" 
+          url="/pages/indexTo/admissionApply/admissionApply">
+          <image src="/assets/images/ico/ico_menu/icon_13.png"></image>
+          <text>入驻申请</text>
+        </navigator>
+      </block>
+    </view>
+  <!-- 分类菜单 end -->
+</view>

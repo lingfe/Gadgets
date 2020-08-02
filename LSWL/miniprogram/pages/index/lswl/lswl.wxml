@@ -1,0 +1,15 @@
+<!--miniprogram/pages/index/lswl/lswl.wxml-->
+<view class="page">
+  <navigator class='list' hover-class="list-hover" 
+  wx:for="{{queryResult}}" wx:key="" url="{{item.model_url}}" >
+    <view class="list-item">
+      {{item.model_name}}
+    </view>
+    <view class="list-item">
+      <image src='{{item.model_img}}' mode=''></image>
+    </view>
+    <view class="list-item">
+      {{item.model_details}}
+    </view>
+  </navigator>
+</view>
