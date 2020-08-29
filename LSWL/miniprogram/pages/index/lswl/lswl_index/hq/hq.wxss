@@ -1,9 +1,0 @@
-/* miniprogram/pages/index/lswl/lswl_index/hq/hq.wxss */
-page{
-  margin: 0;
-  padding: 0;
-  background-image:url(https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/t015323fd1481c5f380.jpg);
-  background-size:100% 100%;
-  background-repeat: no-repeat;
-}
-

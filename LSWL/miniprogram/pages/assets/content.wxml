@@ -1,0 +1,21 @@
+<!-- 导入资源 -->
+<import src="/pages/assets/form_content.wxml" />
+<import src="/pages/assets/menu_content.wxml" />
+<import src="/pages/assets/list_content.wxml" />
+
+<!-- 菜单类型内容 -->
+<template name="menu_type">
+  <template is="{{item.menu_type}}" data="{{item}}" />
+</template>
+
+<!-- 表单字段内容类型 -->
+<template name="field_type">
+  <template is="{{fd.field_type}}" data="{{item}}" />
+</template>
+
+<!-- list集合内容类型 start -->
+<template name="list">
+  <template is="list_bg" data="{{item}}" />
+</template>
+
+<!-- list集合内容类型 end -->

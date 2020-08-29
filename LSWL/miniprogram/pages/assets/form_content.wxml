@@ -1,0 +1,40 @@
+
+<!-- 
+  不同的内容元素
+-->
+
+<!-- 文本框-文本内容 -->
+<template name="input">
+  <view class='item_text'>{{fd.field_explain}}: {{fd.field_value}}</view>
+</template>
+
+<!-- 地址选择 -->
+<template name="select_address">
+  <view class='item_text'>{{fd.field_explain}}: {{fd.field_value}}</view>
+</template>
+
+<!-- 日期选择 -->
+<template name="select_date">
+  <view class='item_text'>{{fd.field_explain}}: {{fd.field_value}}</view>
+</template>
+
+<!-- 图片(单张) -->
+<template name="img_single">
+  <view class='item_text'>{{fd.field_explain}}: 
+    <image class="item_text_img_single" src="{{fd.field_value}}" />
+  </view>
+</template>
+
+<!-- (是否) -->
+<template name="radio_if">
+  <view class='item_text'>{{fd.field_explain}}:
+    <radio-group style="display: inline;"  
+      name='{{fd.field_name}}'
+      data-field="{{fd.field_name}}"
+      id="{{info._id}}" bindchange="bindchange_if">
+            <radio style="margin-left: 4%;" value="0" checked="{{fd.field_value==0}}">否</radio>
+            <radio style="margin-left: 4%;" value="1" checked="{{fd.field_value==1}}">是</radio>
+    </radio-group>
+  </view>
+</template>
+

@@ -2,3 +2,12 @@
 .page{
   padding-top:20rpx; 
 }
+
+.model_title_text{
+  background-color: #000;
+  display: inline;
+  font-weight: bold;
+  box-shadow: 4px 4px 6px grey;
+  border-radius: 10rpx;
+  opacity: 0.8;
+}

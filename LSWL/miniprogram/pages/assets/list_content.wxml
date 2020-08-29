@@ -1,0 +1,37 @@
+<!--
+  list内容元素
+-->
+
+<!-- 有背景图片的list -->
+<template name="list_bg">
+	<navigator url="hq_list_details/hq_list_details?id={{item._id}}" style="background-image: url({{item.event_img}});" class="model2" >
+    <!-- 标题 -->
+		<view class='model2_title'>
+			<view class="model_title_text">{{item.event_name}}</view>
+		</view>
+    <!-- 数据 -->
+		<view class='model2_text'>
+      <!-- 日期 -->
+			<view class='model2_content_right_text_text'>
+				<view class="model_title_text">
+					{{item.event_date}}<span class="model2_text-danger">
+					</span>
+				</view>
+			</view>
+
+      <!-- 浏览量 -->
+			<view class='model2_content_right_text_text'>
+				<view class="model_title_text">
+					浏览<span class="model2_text-danger">{{item.tab_browse.length}}</span>次
+				</view>
+			</view>
+
+      <!-- 分享次数 -->
+			<view class='model2_content_right_text_text model2_no-right'>
+				<view class="model_title_text">
+					<span class="model2_text-danger">{{item.tab_share.length}}</span>次分享
+				</view>
+			</view>
+		</view>
+	</navigator>
+</template>

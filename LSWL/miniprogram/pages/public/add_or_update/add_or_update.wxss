@@ -1,0 +1,91 @@
+/* miniprogram/pages/public/add/add.wxss */
+
+
+/*添加图片*/
+.page_Fundraising_image{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.page_Fundraising_image_title{
+  width: 94%;
+  height: 40rpx;
+  margin: 0 auto;
+}
+.page_Fundraising_image_title_title{
+    width: 58%;
+  height: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #0092ff;
+  line-height: 40rpx;
+  float: left;
+}
+.page_Fundraising_image_title_text{
+  width: 42%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  float: right;
+  text-align: right;
+  text-decoration: underline;
+}
+
+
+
+.image-iamge{
+  width: 94%;
+  background-color: grey;
+  margin: 0 auto;
+  border-radius:16rpx;
+  margin-top: 10rpx;
+}
+.page_Fundraising_image_text{
+  width: 94%;
+  font-size: 28rpx;
+  margin: 0 auto;
+  padding-top:20rpx; 
+  padding-bottom: 20rpx;
+  background: grey;
+  z-index: -10;
+}
+/*添加图片 end*/
+
+/*--选择图片 start*/
+.weui-uploader__bd {
+  margin-bottom:-4px;
+  margin-right:-9px;
+  overflow:hidden;
+}
+.weui-uploader__file {
+  float:left;
+  margin-right:9px;
+  margin-bottom:9px;
+  margin-top:0rpx;
+  margin-left:25rpx;
+}
+.img_tt {
+  z-index:3;
+  position:absolute;
+  width:40rpx;
+  height:40rpx;
+  margin-left:128rpx;
+  margin-top:-25rpx;
+}
+.weui-uploader__img {
+  width:79px;
+  height:79px;
+}
+.weui-uploader__input-box {
+  float:left;
+  position:relative;
+  margin-right:9px;
+  margin-bottom:9px;
+  width:77px;
+  height:77px;
+  border:1px solid #d9d9d9;
+  text-align:center;
+  line-height:66px;
+  font-size:130rpx;
+  margin-left:25rpx;
+}
+/*--选择图片 end*/

@@ -1,4 +1,7 @@
 <!--miniprogram/pages/index/lswl/lswl_data_manage/table_manage/table_manage.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/form_content.wxml" />
+
 <!--/**  
  *   作者:  lingfe 
  *   时间:  2020-7-28
@@ -7,30 +10,25 @@
  * */-->
 <view class='page'>
   <!-- 表数据 start    -->
-  <view class='list'  wx:if="{{list!=null}}">
+  <view class='list'  wx:if="{{list.length!=0}}">
     <!-- 编号、状态、内容等 start -->
-    <view class='list_item' wx:for="{{list}}" wx:key="{{item}}"> 
+    <view class='list_item' wx:for="{{list}}" wx:for-item="info" wx:key="_id"> 
       <!-- id编号 start -->
       <view class='item'>
-        <view class='item_text'>id编号: {{item._id}}</view>
+        <view class='item_text'>id编号: {{info._id}}</view>
       </view>
       <!-- id编号 end -->
 
       <!-- 事件与状态 start -->
       <view class='item'>
-        <view class='item_text'>创建时间: {{item.crt_date}}</view>
+        <view class='item_text' >
+        创建时间: {{info.crt_date}}</view>
         <!-- 状态 start -->
-        <view class='item_static' wx:if="{{item.state==0}}">
-          <text class='item_static_text'>正常</text>
+        <view class='item_static' wx:if="{{info.state==0}}">
+          <text class='item_static_text gree'>正常</text>
         </view>
-        <view class='item_static' wx:elif="{{item.state==1}}">
-          <text class='item_static_text'>下架/删除</text>
-        </view>
-        <view class='item_static' wx:elif="{{item.state==2}}">
-          <text class='item_static_text'>未采纳</text>
-        </view>
-        <view class='item_static' wx:elif="{{item.state==3}}">
-          <text class='item_static_text'>已取消</text>
+        <view class='item_static' wx:elif="{{info.state==1}}">
+          <text class='item_static_text grey'>隐藏</text>
         </view>
         <!-- 状态 end -->
       </view>
@@ -41,67 +39,29 @@
 
       <!-- 内容 start -->
       <view class='item'>
-        <!-- 礼金表 start -->
-        <view class='item_text' wx:if="{{item.cash_gift!=null&&item.cash_gift!=''}}">
-          随行礼金: {{item.cash_gift}}</view>
-        <view class='item_text' wx:if="{{item.name!=null&&item.name!=''}}">
-          来宾姓名: {{item.name}}</view>
-        <view class='item_text' wx:if="{{item.remark!=null&&item.remark!=''}}">
-          备注: {{item.remark}}</view>
-        <!-- 礼金表 end -->
-
-        <!-- 事件表 start -->
-        <view class='item_text' wx:if="{{item.event_name!=null&&item.event_name!=''}}">
-          事件名称: {{item.event_name}}</view>
-        <view class='item_text' wx:if="{{item.event_address!=null&&item.event_address!=''}}">
-          事件地址: {{item.event_address}}</view>
-        <view class='item_text' wx:if="{{item.event_date!=null&&item.event_date!=''}}">
-          事件时间: {{item.event_date}}</view>
-        <view class='item_text' wx:if="{{item.iskaifang!=null&&item.iskaifang!=''}}">
-          是否开放: {{item.iskaifang==0?'否':'是'}}</view>
-        <!-- 事件表 end -->
-
-        <!-- 系统菜单表 start -->
-        <view class='item_text' wx:if="{{item.menu_name!=null&&item.menu_name!=''}}">
-          菜单名称: {{item.menu_name}}</view>
-        <view class='item_text' wx:if="{{item.menu_url!=null&&item.menu_url!=''}}">
-          跳转路径: {{item.menu_url}}</view>
-        <view class='item_text' wx:if="{{item.menu_img!=null&&item.menu_img!=''}}">
-          图片路径: {{item.menu_img}}</view>
-        <!-- 系统菜单表 end -->
-
-        <!-- 页面设置表 start -->
-        <view class='item_text' wx:if="{{item.page_name!=null&&item.page_name!=''}}">
-          页面名称: {{item.page_name}}</view>
-        <view class='item_text' wx:if="{{item.page_path!=null&&item.page_path!=''}}">
-          页面路径: {{item.page_path}}</view>
-        <view class='item_text' wx:if="{{item.page_show!=null&&item.page_show!=''}}">
-          页面说明: {{item.page_show}}</view>
-        <view class='item_text' 
-          wx:if="{{item.is_close_my_button!=null}}">
-          是否关闭我的按钮: {{item.is_close_my_button==0?'否':'是'}}</view>
-        <view class='item_text' 
-          wx:if="{{item.is_close_my_add_button!=null}}">
-          是否关闭我的事件添加按钮: {{item.is_close_my_add_button==0?'否':'是'}}</view>
-        <!-- 页面设置表 end -->
-
+        <view wx:for="{{info.fields}}"
+        wx:for-item="fd" wx:key="_id">
+          <!--  加载元素 -->
+          <template is="{{fd.field_type}}" data="{{fd,info}}" />
+        </view>
       </view>
-      <!-- 内容 start -->
+      <!-- 内容 end -->
 
       <!-- 操作 start -->
       <view class='item_btn'>
-          <button class='btn red' id='{{item._id}}' 
+          <button class='btn red' id='{{info._id}}' 
             bindtap='bind_delete'>删除</button>
-          <button class='btn grey' id='{{item._id}}' 
-            wx:if="{{item.state == 0}}"
+          <button class='btn grey' id='{{info._id}}' 
+            wx:if="{{info.state == 0}}"
             data-state='1'
             bindtap='bind_state'>隐藏</button>
-          <button class='btn gree' id='{{item._id}}' 
-            wx:if="{{item.state != 0}}"
+          <button class='btn gree' id='{{info._id}}' 
+            wx:if="{{info.state != 0}}"
             data-state='0'
             bindtap='bind_state'>显示</button>
-          <navigator url="/pages/index/lswl/lswl_data_manage/operation/operation"         
-            class='btn purple'>操作</navigator>
+          <navigator class='btn purple'
+            url="/pages/public/add_or_update/add_or_update?tab_name={{tab_name}}&id={{info._id}}"         
+            >修改</navigator>
       </view>
       <!-- 操作 end-->
     </view>
@@ -110,7 +70,7 @@
   <!-- 表数据 end -->
 
   <!-- 数据为空 start -->
-  <view class='list' wx:else="{{list==null}}">
+  <view class='list' wx:else="{{list.length==0}}">
     <view class='list_item'>
       <view class='list_item_img' >
         <view class='item_img'>还没有回收记录哦(0_0)</view>
@@ -118,4 +78,7 @@
     </view>
   </view>
   <!-- 数据为空 end -->
+
+  <navigator url="/pages/public/add_or_update/add_or_update?tab_name={{tab_name}}&yw_id={{yw_id}}"
+    class='btn_3d btn_to'>+</navigator>
 </view>

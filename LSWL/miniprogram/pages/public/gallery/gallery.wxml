@@ -1,0 +1,19 @@
+<!--miniprogram/pages/public/gallery/gallery.wxml-->
+<view class="page">
+	<view style="background-image: url({{item.img_url}});" 
+  id="{{item.img_url}}" bindtap="btn_images"
+  class="model2" wx:for="{{queryResult}}" wx:key="_id">
+		<view class='model2_title'>{{item.img_name}}</view>
+		<view class='model2_text'>
+			<view class='model2_content_right_text_text'>
+				使用<span class="model2_text-danger">{{item.tab_browse.length}}</span>次
+			</view>
+			<view class='model2_content_right_text_text'>
+				浏览<span class="model2_text-danger">{{item.tab_browse.length}}</span>次
+			</view>
+			<view class='model2_content_right_text_text model2_no-right'>
+				<span class="model2_text-danger">{{item.tab_share.length}}</span>次分享
+			</view>
+		</view>
+	</view>
+</view>

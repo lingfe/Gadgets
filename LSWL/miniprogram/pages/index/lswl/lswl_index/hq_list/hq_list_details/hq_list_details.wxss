@@ -50,6 +50,7 @@
   width: 70%;
   margin: auto;
   font-size: 30rpx;
+  height: 55px;
 }
 .partner_name{
    height: 100rpx;
@@ -77,14 +78,27 @@
   text-decoration:underline;
   color: #666;
 }
-.open:active{
-  opacity: 0.5;
+.navigator-hover{
+  opacity: 1;
+  background-color: #fff;
 }
+
 .border{
   border-top: 1rpx #666 solid;
   text-decoration:none;
   border-bottom: 1rpx #666 solid;
 }
-.border:active{
- opacity: 1;
+
+.del{
+  bottom: 230rpx;
+}
+.up{
+  bottom: 360rpx;
+}
+
+/*文本框默认属性*/
+.input-placeholder {
+  font-size: 26rpx;
+  color:#000;
+  opacity: 0.5;
 }

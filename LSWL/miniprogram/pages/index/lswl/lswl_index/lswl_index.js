@@ -7,24 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    images_list:[],
-    type_menu:[]
+    images_list: [],
+    type_menu: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.quer();
+    var that = this;
+    that.setData({
+      yw_id: options.menu_id,
+    })
+    this.quer(that);
   },
 
-
-
   //查询
-  quer: function () {
+  quer: function (that) {
     const db = wx.cloud.database();
-    db.collection('tab_my_images').where({
-        yw_id: 'lswl_index'
+    db.collection('tab_my_images')
+      .where({
+        yw_id: that.data.yw_id
       })
       .get({
         success: res => {
@@ -40,12 +43,15 @@ Page({
           })
           console.error('[数据库] [查询记录] 失败：', err)
         }
-    })
+      })
 
     //查询菜单
-    db.collection('tab_sys_menu').where({
-      state: 0
-    })
+    db.collection('tab_sys_menu')
+    .where({
+        state: 0,
+        yw_id: that.data.yw_id
+      })
+      .orderBy('sort', 'asc')
       .get({
         success: res => {
           this.setData({
@@ -61,56 +67,17 @@ Page({
           console.error('[数据库] [查询记录] 失败：', err)
         }
       })
-  
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    var that=this;
+    that.quer(that);
 
+    //下拉完成后执行回退
+    wx.stopPullDownRefresh();
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

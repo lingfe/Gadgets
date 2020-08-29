@@ -13,8 +13,6 @@
   text-align: center;
 }
 .content_cash_gift{
-  height: 300rpx;
-  line-height: 200rpx;
   width: 100%;
   font-size: 60rpx;
   color: red;
@@ -36,8 +34,10 @@
   line-height: 112rpx;
   text-align: center;
   margin-left: 25%;
-  bottom: 60rpx;
-  background-color: red;
+  background-color: #000;
   border-radius: 8px;
   color: #fff;
+}
+.delete:active{
+  opacity: 0.6;
 }

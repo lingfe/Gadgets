@@ -1,4 +1,0 @@
-/* miniprogram/pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list.wxss */
-.page{
-  padding-top:20rpx; 
-}

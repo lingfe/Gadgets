@@ -1,0 +1,26 @@
+<!-- 
+  菜单的内容元素
+-->
+
+<!-- 菜单默认展示方式，内容有(图片，名称) -->
+<template name="default">
+	<navigator class="index-menu-item" url="{{item.menu_url}}?menu_id={{item._id}}">
+		<image src="{{item.menu_img}}"></image>
+		<text>{{item.menu_name}}</text>
+	</navigator>
+</template>
+
+<!-- 以《窗形》展示，包含(名称，图片，说明) -->
+<template name="window_type">
+	<navigator class='list' hover-class="list-hover" 
+    url="{{item.menu_url}}?menu_id={{item._id}}">
+		<!-- 菜单名称 -->
+		<view class="list-item">{{item.menu_name}}</view>
+		<!-- 菜单图片 -->
+		<view class="list-item">
+			<image src='{{item.menu_img}}' mode=''></image>
+		</view>
+		<!-- 菜单说明 -->
+		<view class="list-item">{{item.menu_explain}}</view>
+	</navigator>
+</template>

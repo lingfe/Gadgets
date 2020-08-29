@@ -1,0 +1,5 @@
+/* miniprogram/pages/public/gallery/gallery.wxss */
+
+.page{
+  padding-top: 20px;
+}

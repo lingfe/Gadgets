@@ -1,5 +1,5 @@
 // miniprogram/pages/index/lswl/lswl_index/hq_list/hq_list.js
-var app=getApp();
+var app = getApp();
 
 Page({
 
@@ -7,8 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    queryResult:[],
-    page_data:[],
+    queryResult: [],
+    page_data: [],
+    tab_name:'tab_my_event',
+    pageing:{
+      pageIndex:1,
+      pageNum:10
+    }
   },
 
   /**
@@ -16,81 +21,98 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.data.yw_id=options.menu_id;
+    that.setData({
+      yw_id: options.menu_id,
+      where: { //条件
+        yw_id: options.menu_id,
+        iskaifang: "1",
+      }
+    });
+
     //查询数据
     that.quer(that);
     //页面设置信息
     that.getPageSetup(that);
   },
 
+  //my
+  my:function (e) {
+    var that=this;
+    //先获取用户的openid再查下
+    wx.cloud.callFunction({
+      name: 'openid',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          is_my_add:1,
+          page_data:{
+            is_close_my_button:1,//关闭按钮
+          },
+          where:{
+            openid:res.result.openid,
+            state: 0,
+          },
+          pageing:{
+            pageIndex:1,
+            pageNum:10
+          },
+          queryResult: [],
+        })
+        that.quer(that);
+      }
+    });
+  },
+
   //页面设置信息
-  getPageSetup:function(that){
+  getPageSetup: function (that) {
     const db = wx.cloud.database();
     db.collection("tab_page_setup")
-    .where({
-      page_path:app.getPage().url,
-    }).get({
-      success: res => {
-        that.setData({
-          page_data: res.data
-        })
-        console.log('[数据库] [查询记录] 成功: ', res)
-      },
-    })
+      .where({
+        page_path: app.getPage().url,
+      }).get({
+        success: res => {
+          that.setData({
+            page_data: res.data[0]
+          })
+          console.log('[数据库] [查询记录] 成功: ', res)
+        },
+      })
   },
 
   //查询
   quer: function (that) {
-    const db = wx.cloud.database();
-    db.collection('tab_my_event')
-      .where({
-        yw_id:that.data.yw_id,
-        iskaifang:1,
-        state: 0
-      })
-      .get({
-        success: res => {
-          that.setData({
-            queryResult: res.data
-          })
-          console.log('[数据库] [查询记录] 成功: ', res)
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '查询记录失败'
-          })
-          console.error('[数据库] [查询记录] 失败：', err)
-        }
-      })
-  },
+    //链表
+    var lookup = {
+      lookup1: {
+        from: "tab_browse",
+        localField: '_id',
+        foreignField: 'yw_id',
+        as: "tab_browse"
+      },
+      lookup2: {
+        from: "tab_share",
+        localField: '_id',
+        foreignField: 'yw_id',
+        as: "tab_share"
+      }
+    }
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+    //得到数据
+    wx.cloud.callFunction({
+      name: 'lookup3',
+      data: {
+        tab_name: that.data.tab_name,
+        where: that.data.where,
+        lookup: lookup,
+        pageing:that.data.pageing
+      },
+      complete: function (res) {
+        console.log(res);
+        that.setData({
+          queryResult: that.data.queryResult.concat(res.result.list)
+        })
+      }
+    });
   },
 
   /**
@@ -98,23 +120,34 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this;
+    //重置分页
+    var pageing=that.data.pageing;
+    that.setData({
+      queryResult:[],
+      pageing:{
+        pageIndex:1,
+        pageNum:10
+      }
+    })
     that.quer(that);
-    
+
     //下拉完成后执行回退
     wx.stopPullDownRefresh();
   },
 
-  /**
+    /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function (e) {
+    var that = this;
+    var pageIndex=that.data.pageing.pageIndex;
+    that.setData({
+      pageing:{
+        pageIndex:pageIndex+1,
+        pageNum:10,
+      }
+    })
+    that.quer(that);
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

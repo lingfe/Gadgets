@@ -7,6 +7,7 @@
   </view>
 
   <!-- 重新录入 start -->
-  <view class="delete" id="{{tab._id}}" bindtap="bindtap_delete">重新录入</view>
+  <view wx:if="{{openid==tab.openid}}" 
+  class="delete" id="{{tab._id}}" bindtap="bindtap_delete">重新录入</view>
   <!-- 重新录入  end -->
 </view>

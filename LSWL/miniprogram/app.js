@@ -46,6 +46,13 @@ App({
         traceUser: true,
       })
     }
+    wx.cloud.callFunction({
+      name: 'openid',
+      success: function (res) {
+        console.log("openid:" + res.result.openid);
+        wx.setStorageSync('openid', res.result.openid) ;
+      }
+    });
 
     this.globalData = {}
   }

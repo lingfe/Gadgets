@@ -1,35 +1,40 @@
 <!--miniprogram/pages/index/lswl/lswl_index/hq_list/hq_list_ details/hq_list_ details.wxml-->
 <view class="page">
 
- <!--  搜索框  -->
- <view class='search'>
-    <input type='text' placeholder='输入你想要的内容' 
-    confirm-type='search' value="{{inputValue}}" 
-    bindinput='inputBind' bindconfirm='query'></input>
-      <image class="" src='s.png' bindtap='query'></image>
+	<!--  搜索框  -->
+	<view class='search'>
+		<input type='text' class="input-placeholder" placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
+		<image class="" src='s.png' bindtap='query'></image>
+	</view>
+
+	<!-- 总金额 -->
+	<view class="zogo" bindtap="tapzogo">{{num}}</view>
+
+	<!-- title -->
+	<view class='partner'>
+		<view class="partner_name border">姓名</view>
+		<view class="partner_preset border">礼金</view>
+		<view class="open border">操作</view>
+	</view>
+
+	<!-- neiro start-->
+	<view class='partner' wx:for="{{queryResult}}" wx:key="_id">
+		<view class="partner_name">{{item.name}}</view>
+		<view class="partner_preset">{{item.cash_gift}}</view>
+		<navigator url="../../open_cash_gift/open_cash_gift?id={{item._id}}" class="open">查看</navigator>
+	</view>
+	<!-- neiro end-->
+   
+  <view style="width:72%;" wx:if='{{queryResult==null || queryResult.length==0}}' 
+  class="model_null">
+    暂无数据
   </view>
 
-  <!-- 总金额 -->
-  <view class="zogo" bindtap="tapzogo">{{num}}</view>
 
-  <!-- title -->
-  <view class='partner'>
-    <view class="partner_name border">姓名</view>
-    <view class="partner_preset border">礼金</view>
-    <view class="open border">操作</view>
-  </view>
-
-  <!-- neiro start-->
-  <view class='partner' wx:for="{{queryResult}}" wx:key="">
-    <view class="partner_name">{{item.name}}</view>
-    <view class="partner_preset">{{item.cash_gift}}</view>
-    <navigator url="../../open_cash_gift/open_cash_gift?id={{item._id}}" 
-      class="open">查看</navigator>
-  </view>
-  <!-- neiro end-->
-
-
-  <!-- 点我创建一个吧 -->
-  <view  bindtap="bind_add"
-    class='btn_3d btn_to'>+</view>
+	<!-- 点我创建一个吧 -->
+	<view wx:if="{{openid == event_data.openid }}">
+    <view bindtap="bind_update" wx:if="{{page_data.is_close_update_event_button==0}}" class='btn_3d btn_to up'>up</view>
+		<view bindtap="bind_delete" wx:if="{{page_data.is_close_update_event_button==0}}"   class='btn_3d btn_to del'>del</view>
+		<view bindtap="bind_add" wx:if="{{page_data.is_close_add_cash_gift_button==0}}" class='btn_3d btn_to'>+</view>
+	</view>
 </view>

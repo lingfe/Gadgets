@@ -1,0 +1,22 @@
+<!--miniprogram/pages/public/add/add.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/form.wxml" />
+
+<view class="page">
+	<!-- 表单 start-->
+	<view class='huishou_bg'>
+		<form bindsubmit="submitForm">
+			<view class='huishou_form'>
+				<!-- 遍历字段 start -->
+				<view wx:for="{{fd_data}}" wx:key="_id">
+					<template is="{{item.field_type}}" data="{{item,img,yw_id}}"></template>
+				</view>
+				<!-- 遍历字段 end -->
+
+				<!-- 按钮 -->
+				<button class='form_last' form-type="submit">{{text}}</button>
+			</view>
+		</form>
+	</view>
+	<!-- 表单 end-->
+</view>

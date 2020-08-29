@@ -1,0 +1,73 @@
+<!-- 表单元素 -->
+
+<!-- 文本框 -->
+<template name="input">
+	<view class='form'>
+		<view class='title'>{{item.field_explain}}</view>
+		<input name="{{item.field_name}}" value="{{item.field_value}}" type='text' placeholder='{{item.field_placeholder}}' />
+	</view>
+</template>
+
+<!-- 图片上传(单张） -->
+<template name="img_single">
+	<!-- 图片 start-->
+	<view class='page_Fundraising_image'>
+		<view class='page_Fundraising_image_title'>
+			<view class='page_Fundraising_image_title_title'>
+				{{item.field_explain}}<text style='color:red;'>*</text></view>
+			<navigator url="/pages/public/gallery/gallery?yw_id={{yw_id}}"
+			class='page_Fundraising_image_title_text'>
+				从图库选择>>
+			</navigator>
+		</view>
+		<view class="image-iamge">
+			<view class='page_Fundraising_image_text'>
+				请选择请清晰，明了，干净的图片
+			</view>
+			<!-- 选择图片  start -->
+			<view class="weui-uploader__bd">
+				<view class="weui-uploader__files" id="uploaderFiles">
+					<view class="weui-uploader__file" wx:if="{{img.path!=null}}" bindlongtap="previewImage" id="{{img.images_single[0]}}">
+						<image class="img_tt" src="https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/delete.png?sign=ef1d24783fbf811c52ebf6f6f1777967&t=1598413722" bindtouchend="bindtapImageDelete" data-field="{{item.field_name}}" />
+						<image class="weui-uploader__img" src="{{img.path}}" mode="aspectFill" />
+						<input hidden="true" name="{{item.field_name}}" value="{{img.path}}" />
+					</view>
+				</view>
+				<view class="weui-uploader__input-box" bindtap="chooseImage">+</view>
+			</view>
+			<!-- 选择图片  end -->
+		</view>
+	</view>
+	<!-- 图片   end-->
+</template>
+
+<!-- 单选(是否) -->
+<template name="radio_if">
+	<view class='form'>
+		<view class='title'>{{item.field_explain}}</view>
+		<radio-group name='{{item.field_name}}'>
+			<radio value="0" checked="{{item.field_value==0}}">否</radio>
+			<radio value="1" checked="{{item.field_value==1}}">是</radio>
+		</radio-group>
+	</view>
+</template>
+
+<!-- 日期选择 -->
+<template name="select_date">
+	<view class='form'>
+		<view class='title'>{{item.field_explain}}</view>
+		<picker class='input_other' mode="date" value="{{date}}" start="{{startTime}}" id="{{item._id}}" end="2020-09-01" bindchange="bindPickerChange">
+			<input disabled='false' name="{{item.field_name}}" value="{{item.field_value}}" type='text' placeholder='{{item.field_placeholder}}' />
+		</picker>
+	</view>
+</template>
+
+<!-- 地址选择 -->
+<template name="select_address">
+	<view class='form'>
+		<view class='title'>{{item.field_explain}}</view>
+		<picker class='input_other' mode="region" id="{{item._id}}" range="{{region}}" bindchange="bindRegionChange" custom-item="{{customItem}}">
+			<input disabled='false' name="{{item.field_name}}" value="{{item.field_value}}" type='text' placeholder='{{item.field_placeholder}}' />
+		</picker>
+	</view>
+</template>

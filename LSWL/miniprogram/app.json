@@ -2,16 +2,15 @@
   "pages": [
     "pages/index/lswl/lswl",
     "pages/index/lswl/lswl_index/lswl_index",
-    "pages/index/lswl/lswl_index/hq/hq",
     "pages/index/lswl/lswl_index/hq_list/hq_list",
     "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-    "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
     "pages/index/lswl/lswl_index/open_cash_gift/open_cash_gift",
-    "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
-    "pages/index/lswl/lswl_index/hq_list/my_hq_list/check_menu_type/check_menu_type",
     "pages/index/lswl/lswl_data_manage/lswl_data_manage",
     "pages/index/lswl/lswl_data_manage/table_manage/table_manage",
-    "pages/index/lswl/lswl_data_manage/operation/operation"
+    "pages/index/lswl/lswl_data_manage/operation/operation",
+    "pages/public/add_or_update/add_or_update",
+    "pages/public/gallery/gallery",
+    "pages/public/check_menu_type/check_menu_type"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
