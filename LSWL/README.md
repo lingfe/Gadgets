@@ -11,6 +11,24 @@
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
 
+    <!-- "pages/index/nmhs/index/index",
+    "pages/index/nmhs/myInfo/myInfo",
+    "pages/index/nmhs/myInfo/myReservation/myReservation",
+    "pages/index/nmhs/lemonRecovery/admin/admin",
+    "pages/index/nmhs/myInfo/myContribution/myContribution",
+    "pages/index/nmhs/findPage/findPage",
+    "pages/index/nmhs/findPage/lemonCommonweal/lemonCommonweal",
+    "pages/index/nmhs/findPage/lemonCommonweal/oldClothes/oldClothes",
+    "pages/index/nmhs/findPage/myPoints/myPoints",
+    "pages/index/nmhs/findPage/myPoints/pointsOrder/pointsOrder",
+    "pages/index/nmhs/findPage/myPoints/exchange/exchange",
+    "pages/index/nmhs/findPage/lemonCommonweal/gyDynamic/gyDynamic",
+    "pages/index/nmhs/findPage/gyLemon/gyLemon",
+    "pages/index/nmhs/findPage/myPoints/IntegralRecord/IntegralRecord",
+    "pages/index/nmhs/findPage/lemonCommonweal/gyDynamic/newsInformation/newsInformation",
+    "pages/index/nmhs/findPage/myPoints/integralTransaction/integralTransaction" -->
+
+
 ## 数据库
 - tab_user_info (用户信息表)
   - id

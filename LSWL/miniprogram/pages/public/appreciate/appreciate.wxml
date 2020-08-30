@@ -1,0 +1,8 @@
+<!--miniprogram/pages/public/appreciate/appreciate.wxml-->
+<view class="page">
+  <view class="title">您的支持是我的动力</view>
+  <view class="img">
+    <image src="{{menuinfo.menu_img}}" id="{{menuinfo.menu_img}}" bindtap="btn_preview" mode="scaleToFill" />
+  </view>
+  <view class="text">点击图片长按保存，在微信里打开识别</view>
+</view>

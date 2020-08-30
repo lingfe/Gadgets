@@ -4,7 +4,7 @@
 	<!--  搜索框  -->
 	<view class='search'>
 		<input type='text' class="input-placeholder" placeholder='输入你想要的内容' confirm-type='search' value="{{inputValue}}" bindinput='inputBind' bindconfirm='query'></input>
-		<image class="" src='s.png' bindtap='query'></image>
+		<image class="" src='/images/s.png' bindtap='query'></image>
 	</view>
 
 	<!-- 总金额 -->
@@ -35,6 +35,16 @@
 	<view wx:if="{{openid == event_data.openid }}">
     <view bindtap="bind_update" wx:if="{{page_data.is_close_update_event_button==0}}" class='btn_3d btn_to up'>up</view>
 		<view bindtap="bind_delete" wx:if="{{page_data.is_close_update_event_button==0}}"   class='btn_3d btn_to del'>del</view>
-		<view bindtap="bind_add" wx:if="{{page_data.is_close_add_cash_gift_button==0}}" class='btn_3d btn_to'>+</view>
+		<view bindtap="bind_add" wx:if="{{page_data.is_close_add_cash_gift_button==0}}" 
+		class='btn_3d btn_to'>+</view>
+	</view>
+
+	<!-- 随礼 -->
+	<view class="suili">
+		<form bindsubmit="submitForm">
+			<input class="suili_name" value="零风" name="name" placeholder="输入姓名" />
+			<input class="suili_price" value="200.00" type="digit" name="cash_gift" placeholder="金额"/>
+			<button class="suili_btn" form-type="submit">随礼</button> 
+		</form>
 	</view>
 </view>

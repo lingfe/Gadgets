@@ -1,0 +1,23 @@
+/* miniprogram/pages/public/partnership/partnership.wxss */
+.page{
+  width: 100%;
+}
+
+.title{
+  width: 90%;
+  margin: auto;
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.img{
+  width: 90%;
+  margin: auto;
+}
+.img image{
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

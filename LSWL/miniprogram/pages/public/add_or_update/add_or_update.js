@@ -9,7 +9,7 @@ Page({
   data: {
     yw_id: null, //业务id
     tab_name: "tab_my_cash_gift", //表名
-    text: '添加', //默认
+    text: '保存', //默认
   },
 
   //字段赋值
@@ -171,7 +171,7 @@ Page({
         //提示
         wx.showModal({
           title: '成功',
-          content: '是否继续添加?',
+          content: '是否继续?',
           confirmText: "继续",
           cancelText: "返回",
           success: function (res) {

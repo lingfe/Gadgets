@@ -1,5 +1,9 @@
 /* miniprogram/pages/index/lswl/lswl_index/hq_list/hq_list_ details/hq_list_ details.wxss */
 
+.page{
+  padding-bottom: 50px;
+}
+
 /* 搜索框样式 */
 .search
 {
@@ -90,10 +94,10 @@
 }
 
 .del{
-  bottom: 230rpx;
+  bottom: 280rpx;
 }
 .up{
-  bottom: 360rpx;
+  bottom: 410rpx;
 }
 
 /*文本框默认属性*/
@@ -101,4 +105,38 @@
   font-size: 26rpx;
   color:#000;
   opacity: 0.5;
+}
+
+/* 随礼 */
+.suili{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  border-top: grey  solid 1px;
+  background-color: #fff;
+}
+.suili_name{
+  float: left;
+  width: 40%;
+  color:#000;
+  height: 50px;
+  background-color: #fff;
+  padding-left: 20px;
+}
+.suili_price{
+  float: left;
+  width: 20%;
+  color:#000;
+  height: 50px;
+  background-color: #fff;
+  padding-right: 6px;
+}
+.suili_btn{
+  box-shadow: grey;
+  border-radius: 10%;
+  width: 20%;
+  height: 50px;
+  float: right;
 }

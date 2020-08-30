@@ -10,7 +10,9 @@
     "pages/index/lswl/lswl_data_manage/operation/operation",
     "pages/public/add_or_update/add_or_update",
     "pages/public/gallery/gallery",
-    "pages/public/check_menu_type/check_menu_type"
+    "pages/public/check_menu_type/check_menu_type",
+    "pages/public/appreciate/appreciate",
+    "pages/public/partnership/partnership"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

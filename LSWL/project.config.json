@@ -4,13 +4,21 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -22,7 +30,7 @@
 	},
 	"appid": "wx4a82967c20ccc576",
 	"projectname": "LSWL",
-	"libVersion": "2.2.5",
+	"libVersion": "2.12.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
@@ -166,6 +174,68 @@
 					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
 					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
+					"pathName": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/public/add",
+					"pathName": "pages/public/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "pages/public/add_or_update/add_or_update",
+					"pathName": "pages/public/add_or_update/add_or_update",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/public/add/add",
+					"pathName": "pages/public/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages",
+					"pathName": "pages/index/nmhs/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/nmhs/index",
+					"pathName": "pages/index/nmhs/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/nmhs/findPage/findPage",
+					"pathName": "pages/index/nmhs/findPage/findPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/lswl_index",
+					"pathName": "pages/index/lswl/lswl_index/lswl_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
 					"scene": null
 				}
 			]

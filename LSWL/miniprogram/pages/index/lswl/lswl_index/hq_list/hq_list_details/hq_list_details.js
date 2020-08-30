@@ -30,18 +30,107 @@ Page({
     that.save_browse(that);
   },
 
+  //随礼
+  submitForm: function (e) {
+    var that = this;
+
+    //数据
+    var form = e.detail.value;
+    form.crt_date = new Date().toLocaleString(); //创建时间
+    form.openid = wx.getStorageSync('openid');
+    form.state=0;
+    if (app.checkInput(form.yw_id)) {
+      form.yw_id = that.data.yw_id; //业务id
+    }
+
+    //等待
+    wx.showLoading({
+      title: '支付中..',
+    })
+    //设置参数
+    var uuid = new Date().getTime(); //调用自己的uuid函数
+    var body = "换成自己的订单支付内容"
+
+    //调用原函数支付
+    wx.cloud.callFunction({
+      name: "pay",
+      data: {
+        body: body,
+        orderid: "" + uuid,
+        money: 1, //支付金额
+        nonceStr: "" + uuid //调用自己的uuid函数
+      },
+      complete(res) {
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+        //提示
+        wx.showToast({
+          title: res.result.returnMsg,
+          icon: 'none'
+        })
+
+        //保存礼金
+        wx.cloud.callFunction({
+          name: 'add',
+          data: {
+            tab_name: 'tab_my_cash_gift',
+            form: form
+          },
+          complete: function (res) {
+            console.log("保存礼金成功", res);
+            //刷新
+            that.query();
+            //提示
+            wx.showToast({
+              title: '保存礼金成功!',
+              icon: 'none'
+            })
+          }
+        });
+
+        console.log("提交成功", res.result)
+        //创建自己的未支付订单
+        that.pay(res.result)
+      },
+      fail(res) {
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+        console.log("提交失败", res)
+      }
+    })
+  },
+
+  //实现小程序支付
+  pay(payData) {
+    var that = this;
+    const payment = payData.payment //这里注意，上一个函数的result中直接整合了这里要用的参数，直接展开即可使用
+    wx.requestPayment({
+      ...payment, //。。。是展开变量的语法 
+      success(res) {
+        console.log('pay success', res)
+        //跳转到支付成功页面
+      },
+      fail(res) {
+        console.error('pay fail', res)
+        //跳转到支付失败页面
+      }
+    })
+  },
+
   //删除事件
-  bind_delete:function(e){
+  bind_delete: function (e) {
     wx.showModal({
-      title:"提示",
-      content:"是否删除？删除之后无法恢复！",
-      cancelText:"否",
-      confirmText:'YES',
-      success:function(res){
-        if(res.confirm){
+      title: "提示",
+      content: "是否删除？删除之后无法恢复！",
+      cancelText: "否",
+      confirmText: 'YES',
+      success: function (res) {
+        if (res.confirm) {
           wx.showToast({
-            title:'该功能还未开通',
-            icon:'none'
+            title: '该功能还未开通',
+            icon: 'none'
           });
         }
       }
@@ -88,7 +177,8 @@ Page({
           },
           success: function (res) {
             console.log(res);
-
+            //刷新
+            that.query();
           }
         });
       },
@@ -122,9 +212,9 @@ Page({
   //添加礼金验证
   bind_add: function (e) {
     wx.navigateTo({
-      url: '/pages/public/add_or_update/add_or_update?'
-      +'tab_name=tab_my_cash_gift'
-      +'&yw_id=' + this.data.yw_id,
+      url: '/pages/public/add_or_update/add_or_update?' +
+        'tab_name=tab_my_cash_gift' +
+        '&yw_id=' + this.data.yw_id,
     })
   },
 
@@ -195,7 +285,7 @@ Page({
           $options: 'i' //不区分大小写
         }
       })
-      .orderBy('cdate', 'desc')
+      .orderBy('crt_date', 'desc')
       .get({
         success: res => {
           var list = res.data;
