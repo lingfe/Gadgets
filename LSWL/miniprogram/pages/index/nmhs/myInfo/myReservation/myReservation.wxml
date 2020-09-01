@@ -1,0 +1,57 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-27
+ *   描述:  我的预约
+ * 
+ * */-->
+<view class='page'>
+  <!-- 预约数据 start -->
+
+  <!-- 订单数据 start-->
+  <view class='list' wx:if="{{list!=null}}">
+    <view class='list_item'  wx:for="{{list}}" wx:key="{{item}}">
+      <view class='item'>
+        <view class='item_text'>订单编号: {{item.id}}</view>
+      </view>
+      <view class='item'>
+        <view class='item_text'>下单时间: {{item.cdate}}</view>
+        <view class='item_static' wx:if="{{item.state==0}}">
+          <image class='item_static_img' bindtap='bindtapPhone' src='/assets/images/myinfo/phone.png'/>
+          <text class='item_static_text'>已提交</text>
+        </view>
+        <view class='item_static' wx:elif="{{item.state==1}}">
+          <text class='item_static_text'>已完成</text>
+        </view>
+        <view class='item_static' wx:elif="{{item.state==2}}">
+          <text class='item_static_text'>未采纳</text>
+        </view>
+        <view class='item_static' wx:elif="{{item.state==3}}">
+          <text class='item_static_text'>已取消</text>
+        </view>
+      </view>
+      <view class='item_border'></view>
+      <view class='item'>
+        <view class='item_text'>您的称呼: {{item.cellYou}}</view>
+        <view class='item_text'>联系电话: {{item.phone}}</view>
+        <view class='item_text'>预约地点: {{item.yuyueAdress}}</view>
+        <view class='item_text'>预约地址: {{item.adressInfo}}</view>
+        <view class='item_text'>预约时间: {{item.doorTime}}</view>
+        <view class='item_btn' wx:if="{{item.state==0}}">
+          <button class='consultation_bottom_btn' id='{{item.id}}' bindtap='bindtapcancel'>取消预约</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单数据 end-->
+
+  <!-- 空订单 start-->
+  <view class='list' wx:else="{{list==null}}">
+    <view class='list_item'>
+      <view class='list_item_img' >
+        <view class='item_img'>还没有回收记录哦(0_0)</view>
+      </view>
+    </view>
+  </view>
+  <!-- 空订单 end-->
+  <!-- 预约数据 end -->
+</view>

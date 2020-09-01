@@ -1,0 +1,126 @@
+/**  
+ *   作者:  lingfe 
+ *   时间:  2017-11-7
+ *   描述:  我的积分
+ * 
+ * */
+page{
+  background-color: #F7F8F3;
+}
+
+ /*头部*/
+ .top{
+   width: 100%;
+   height: 230rpx;
+   background-color: #fff;
+   padding-top: 20rpx;
+   padding-bottom: 20rpx;
+ }
+
+ .top_title{
+   width: 100%;
+   font-size: 70rpx;
+   text-align: center;
+   padding-top: 10rpx;
+ }
+ .top_text{
+   text-align: center;
+   width: 100%;
+   font-size: 24rpx;
+   padding-top: 10rpx;
+ }
+ .top_btn{
+   width: 80%;
+   margin: auto;
+   font-size: 26rpx;
+   text-align: center;
+   margin-top: 30rpx;
+ }
+ .btn_order{
+   margin-left: 20rpx;
+   width: 28%;
+   height: 60rpx;
+   line-height: 60rpx;
+   float: left;
+   background-color: #EACF02;
+   border-radius: 10rpx;
+   color: #fff;
+ }
+ .btn{
+   background-color: #fff;
+   border:1rpx solid #EACF02;
+   color: #EACF02;
+ }
+
+ /*兑换广场*/
+ .square{
+   width: 100%;
+   height: auto;
+ }
+ .square_title{
+   width: 90%;
+   margin-top: 20rpx;
+   margin-left: 20rpx;
+   text-align: left;
+   font-size: 26rpx;
+   margin-bottom: 20rpx;
+ }
+ .square_content{
+   width: 100%;
+   margin:auto;
+  /* -moz-column-count:2; /* Firefox */
+  /* -webkit-column-count:2; /* Safari and Chrome */
+  /* column-count:2;
+  column-gap:10rpx; */ 
+ }
+ .content{
+   width: 48%;
+   padding-bottom: 20rpx;
+   background-color: #fff;
+   margin-top: 10rpx;
+   margin-left: 10rpx;
+   float: left;
+ }
+ .content_img{
+  width: 100%;
+  height: 350rpx;
+ }
+ .content_title{
+   width: 96%;
+   font-size: 30rpx;
+   text-align: right;
+   margin-bottom: 14rpx;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis; /**文字隐藏后添加省略号*/
+  white-space: nowrap; /*强制不换行 */
+ }
+.content_prices{
+   width: 96%;
+   font-size: 30rpx;
+   text-align: right;
+   margin-bottom: 10rpx;
+}
+.content_prices_img{
+  width: 7%;
+  height: 26rpx;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+.content_text{
+  width: 96%;
+   font-size: 20rpx;
+   text-align: right;
+}
+
+/*到底啦*/
+.daodila{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: gray;
+  font-size: 24rpx;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  float: left;
+}
