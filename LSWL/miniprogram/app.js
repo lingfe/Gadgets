@@ -1,6 +1,8 @@
 //app.js
 App({
 
+  
+
   //验证非空
   checkInput: function (data) {
     if (data == null || data == undefined || data == "" || data == 'null') {
@@ -36,6 +38,39 @@ App({
       currentPage:currentPage,
     };
   },
+
+
+  onShow:function(){
+    var that=this;
+    wx.cloud.callFunction({
+      name: 'openid',
+      success: function (res) {
+        console.log("openid:" + res.result.openid);
+        wx.setStorageSync('openid', res.result.openid) ;
+        //查询是否存在
+        wx.cloud.callFunction({
+          name:"query",
+          data:{
+            tab_name:'tab_user_info',
+            where:{
+              openid:res.result.openid
+            }
+          },
+          success:function(user){
+            console.log(user);
+            if(that.checkInput(user.result.data)){
+              //不存在,跳转
+              wx.navigateTo({
+                url: '/pages/public/wxUserinfoLogin/wxUserinfoLogin',
+              })
+            }else{
+              wx.setStorageSync('userinfo', user.result.data[0]);
+            }
+          }
+        })
+      }
+    });
+  },
   
   onLaunch: function () {
     
@@ -46,14 +81,6 @@ App({
         traceUser: true,
       })
     }
-    wx.cloud.callFunction({
-      name: 'openid',
-      success: function (res) {
-        console.log("openid:" + res.result.openid);
-        wx.setStorageSync('openid', res.result.openid) ;
-      }
-    });
-
     this.globalData = {}
   }
 })

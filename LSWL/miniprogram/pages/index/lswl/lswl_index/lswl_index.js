@@ -20,6 +20,7 @@ Page({
       yw_id: options.menu_id,
     })
     this.quer(that);
+   
   },
 
   //查询

@@ -153,14 +153,18 @@
    
 }
 .partner_title{
-  width: 100%;
+  width: 90%;
   /* padding-top: 20rpx; */
   padding-bottom: 20rpx;
   height: 60rpx;
   position:relative;
   background-color: #fff;
   bottom: 10rpx;
-  float: left;
+  margin: auto;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
 }
 .paixue{
   color: #14bac8;
@@ -180,14 +184,12 @@
   float: left;
   line-height: 60rpx;
   margin-left: 10rpx;
-  width: 26%;
   text-align: left;
   overflow: hidden; /**自动隐藏文字*/
   text-overflow: ellipsis; /**文字隐藏后添加省略号*/
   white-space: nowrap; /*强制不换行 */
 }
 .partner_right{
-
   float: right;
   line-height: 60rpx;  
   font-size: 26rpx;

@@ -1,12 +1,12 @@
-// miniprogram/pages/index/lswl/lswl_data_manage/lswl_data_manage.js
+// miniprogram/pages/public/notice/notice.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    url:'../lswl_data_manage/table_manage/table_manage',
-    img:'',
+    tab_name:'tab_notice',
+    url:'/pages/public/content/content'
   },
 
   /**
@@ -14,27 +14,28 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-    const db = wx.cloud.database();
-    db.collection('tab_sys_table')
-      .where({
-        state:0
-      })
-      .get({
-        success: res => {
-          that.setData({
-            tab_list: res.data
-          })
-          console.log('[数据库] [查询记录] 成功: ', res)
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '查询记录失败'
-          })
-          console.error('[数据库] [查询记录] 失败：', err)
-        }
-    })
+    //get
+    that.getNotice(that);
+  },
 
+  //公告信息
+  getNotice(that){
+    wx.cloud.callFunction({
+      name: 'query',
+      data: {
+        tab_name: 'tab_notice',
+        where:{
+          state:0,
+          yw_id:wx.getStorageSync('menu_id')
+        }
+      },
+      complete: function (res) {
+        console.log(res);
+        that.setData({
+          notice_list:res.result.data
+        })
+      }
+    })
 
   },
 

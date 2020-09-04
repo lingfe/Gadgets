@@ -6,7 +6,7 @@
 	<!-- 表单 start-->
 	<view class='huishou_bg'>
 		<form bindsubmit="submitForm">
-			<view class='huishou_form'>
+			<view class='huishou_form' style="  background-image: url(https://pic31.photophoto.cn/20140607/0008020273133975_b.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
 				<!-- 遍历字段 start -->
 				<view wx:for="{{fd_data}}" wx:key="_id">
 					<template is="{{item.field_type}}" data="{{item,img,yw_id}}"></template>

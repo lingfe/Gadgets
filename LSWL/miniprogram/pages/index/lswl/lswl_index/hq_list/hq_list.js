@@ -35,6 +35,15 @@ Page({
     that.getPageSetup(that);
   },
 
+  //添加
+  add:function(e){
+    var that=this;
+    var param="tab_name=tab_sys_menu";
+    wx.navigateTo({
+      url:"/pages/public/check_menu_type/check_menu_type?"+param
+    })
+  },
+
   //my
   my:function (e) {
     var that=this;

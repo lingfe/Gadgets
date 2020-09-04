@@ -1,14 +1,12 @@
 <!--miniprogram/pages/index/lswl/lswl_index/hq_list/my_hq_list/check_menu_type/check_menu_type.wxml-->
-<view class='page'>
+<!-- 导入资源 -->
+<import src="/pages/assets/menu_content.wxml" />
 
-  <!-- 菜单 start -->
+<view class='page'>
+  <!-- 遍历元素 start -->
   <view class='menu_heng'>
-    <navigator url="/pages/public/add_or_update/add_or_update?yw_id={{item._id}}&tab_name=tab_my_event" 
-    wx:for="{{type_menu}}"  wx:key="_id" class='menu_heng_navigator'>
-       <image class='menu_heng_img' src='{{item.menu_img}}'></image>
-       <view class='menu_heng_text'>{{item.menu_name}}</view>
-       <view class='menu_heng_v'>></view>
-    </navigator>
+    <block wx:for="{{list}}"  wx:key="_id">
+      <template is="type_oblong" data="{{item:item.st,josn:item.josn}}" />
+    </block>
   </view>
-  <!-- 菜单 end -->
 </view>

@@ -1,0 +1,39 @@
+<!--miniprogram/pages/public/content/content.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/content.wxml" />
+
+<view class="page">
+
+	<!-- 可编辑 -->
+	<block wx:if="{{openid == notice.openid}}">
+		<!-- 操作 start -->
+		<view class='operation'>
+			<!-- 编辑 -->
+			<navigator url="/pages/public/add_or_update/add_or_update?id={{notice._id}}&tab_name=tab_notice" class='operation_view'>编辑</navigator>
+			<!-- 删除 -->
+			<view bindtap='deleteTabaContent' id='{{pro.id}}' class='operation_view'>删除</view>
+			<!-- ... -->
+			<view class='operation_view'>...</view>
+		</view>
+		<!-- 操作 end -->
+	</block>
+	<!-- 标题 -->
+	<view class="notice_title">{{notice.title}}</view>
+
+	<!-- 遍历内容 start  -->
+	<view class='content_pro' wx:for-item="pro" wx:for="{{content_list}}" wx:key="_id">
+		<!-- 内容  start-->
+		<block wx:if="{{openid != notice.openid}}">
+			<template is="content" data="{{pro}}" />
+		</block>
+		<block wx:elif="{{openid == notice.openid}}">
+			<!-- 可编辑 -->
+			<template is="content_add_or_update" data="{{pro}}" />
+		</block>
+	</view>
+</view>
+
+<!-- 联系电话 -->
+<view bindtap="{{btn}}" style="bottom:150px;" wx:if="{{btn=='bind_tel'}}" class='btn_3d btn_to'>tel</view>
+<!-- 跳转到添加 -->
+<navigator url="/pages/public/add_or_update/add_or_update?yw_id={{notice._id}}&tab_name=tab_content" wx:if="{{openid == notice.openid}}" class='btn_3d btn_to'>+</navigator>

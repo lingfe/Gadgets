@@ -236,6 +236,20 @@
 					"id": -1,
 					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
 					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/public/textbox/textbox",
+					"pathName": "pages/public/textbox/textbox",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/nmhs/myInfo/myInfo",
+					"pathName": "pages/index/nmhs/myInfo/myInfo",
 					"scene": null
 				}
 			]

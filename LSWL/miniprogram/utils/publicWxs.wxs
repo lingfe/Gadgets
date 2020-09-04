@@ -1,0 +1,18 @@
+
+var item={
+  /**
+   * 将字符串转成数组
+   * @param value 字符串
+   */
+  strZarr:function(value){
+    return value.split(',');
+  },
+  josnZstr:function(josn){
+    return JSON.stringify(josn);
+  }
+}
+
+module.exports = {
+  strZarr:item.strZarr,
+  josnZstr:item.josnZstr
+}

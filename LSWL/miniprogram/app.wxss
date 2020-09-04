@@ -348,9 +348,6 @@
   background-color: #fff;
   border-radius: 10px;
   color: #fff;
-  background-image: url(https://pic31.photophoto.cn/20140607/0008020273133975_b.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .form {
@@ -410,17 +407,17 @@ button::after {
 /*文本框默认属性*/
 .input-placeholder {
   font-size: 26rpx;
-  color: #fff;
+  color: #888;
   opacity: 0.5;
 }
 
 .input_other {
   position: relative;
-  color: #fff;
+  color: #888;
 }
 
 .input {
-  color: #fff;
+  color: #000;
   margin-left: 0px;
   display: inline-block;
   width: 100%;
@@ -456,3 +453,138 @@ wx-radio .wx-radio-input-checked {
 radio {
   margin-left: 10px;
 }
+
+
+/* 对应内容content.wxml start */
+.pro_shopIntroduce{
+  width: 100%;
+  margin: auto;
+}
+.pro_shopIntroduce_logo{
+  width: 100%;
+  height:480rpx;
+  border-radius:50%;
+}
+.pro_shopIntroduce_name{
+  text-align: center;
+  font-size: 50rpx;
+  font-weight: bold;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.pro_shopIntroduce_param{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+    overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+}
+.pro_shopIntroduce_images{
+  width: 100%;
+}
+.pro_shopIntroduce_images image{
+  width: 30%;
+  height: 220rpx;
+  margin-left: 3%;
+}
+.pro_shopIntroduce_text{
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #330066;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.weui-tab__content{
+  width:100%;
+  height: auto;
+}
+.tab_content{
+  font-size:26rpx;
+  width: 100%;
+  margin:auto;
+  line-height:30rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  background-color:#fff;
+  margin-top: 20rpx;
+  margin-bottom: 110rpx;
+}
+.content_pro{
+  width: 96%;
+  margin: auto;
+}
+
+/* 操作 start */
+.operation{
+  text-align: center;
+  display: flex;
+}
+.operation_view{
+  background-color: #006699;
+  width: 20%;
+  margin: auto;
+  color: #fff;
+  height: 60rpx;
+  line-height:55rpx;
+  font-size: 32rpx;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+}
+/* 操作 end */
+
+/* 内容 */
+.notice_title{
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.pro_title{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 30rpx;
+}
+.pro_content{
+  letter-spacing: 2rpx;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  padding: 30rpx;
+}
+.content_bold_first{
+  font-weight: bold;
+}
+.content_bold_tail{
+  font-weight: bold;
+}
+.content_Bold{
+  font-weight:bold;
+}
+.image_list{
+  padding-top: 30rpx;
+}
+.pro_img{
+   width: 100%;
+   height: 350rpx;
+ }
+ .img_text{
+  width: 100%;
+  font-size: 22rpx;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis;/**文字隐藏后添加省略号*/
+  white-space: nowrap;/**强制不换行*/
+  text-align: center;
+  height: 50rpx;
+  line-height: 40rpx;
+  color: #aaa;
+}
+.bottom{
+   width: 100%;
+   height: 30rpx;
+ }
+/* 对应内容content.wxml end */

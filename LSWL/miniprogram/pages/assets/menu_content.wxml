@@ -4,7 +4,7 @@
 
 <!-- 菜单默认展示方式，内容有(图片，名称) -->
 <template name="default">
-	<navigator class="index-menu-item" url="{{item.menu_url}}?menu_id={{item._id}}">
+	<navigator class="index-menu-item" url="{{item.menu_url}}&yw_id={{item._id}}&menu_id={{item._id}}">
 		<image src="{{item.menu_img}}"></image>
 		<text>{{item.menu_name}}</text>
 	</navigator>
@@ -12,8 +12,8 @@
 
 <!-- 以《窗形》展示，包含(名称，图片，说明) -->
 <template name="window_type">
-	<navigator class='list' hover-class="list-hover" 
-    url="{{item.menu_url}}?menu_id={{item._id}}">
+	<view id="{{item._id}}" bindtap="jump" class='list' hover-class="list-hover" 
+    data-url="{{item.menu_url}}&menu_id={{item._id}}">
 		<!-- 菜单名称 -->
 		<view class="list-item">{{item.menu_name}}</view>
 		<!-- 菜单图片 -->
@@ -22,5 +22,15 @@
 		</view>
 		<!-- 菜单说明 -->
 		<view class="list-item">{{item.menu_explain}}</view>
-	</navigator>
+	</view>
+</template>
+
+<!-- 长方形展示方式，内容有(图片，名称)  start -->
+<template name="type_oblong">
+	<navigator url="{{josn.url}}?yw_id={{item._id}}&tab_name={{josn.tab_name}}" 
+     class='menu_heng_navigator'>
+       <image class='menu_heng_img' src='{{josn.img}}'></image>
+       <view class='menu_heng_text'>{{josn.name}}</view>
+       <view class='menu_heng_v'>{{josn.text}}</view>
+  </navigator>
 </template>

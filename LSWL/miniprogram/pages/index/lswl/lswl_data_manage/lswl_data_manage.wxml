@@ -1,14 +1,16 @@
 <!--miniprogram/pages/index/lswl/lswl_data_manage/lswl_data_manage.wxml-->
+
+<!-- 导入资源 -->
+<import src="/pages/assets/menu_content.wxml" />
+
 <view class='page'>
 
   <!-- 表信息列表 start -->
   <view class='menu_heng'>
-    <navigator url="../lswl_data_manage/table_manage/table_manage?tab_name={{item.tab_name}}" 
-    wx:for="{{tab_list}}"  wx:key="_id" class='menu_heng_navigator'>
-       <image class='menu_heng_img' src='{{item.menu_img}}'></image>
-       <view class='menu_heng_text'>{{item.tab_cname}}</view>
-       <view class='menu_heng_v'>管理</view>
-    </navigator>
+    <block wx:for="{{tab_list}}"  wx:key="_id">
+      <template is="type_oblong" 
+      data="{{item,img:img,text:'管理',name:item.tab_cname,url,tab_name:item.tab_name}}" />
+    </block>
   </view>
   <!-- 表信息列表 end -->
 </view>

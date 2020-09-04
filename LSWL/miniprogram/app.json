@@ -9,10 +9,18 @@
     "pages/index/lswl/lswl_data_manage/table_manage/table_manage",
     "pages/index/lswl/lswl_data_manage/operation/operation",
     "pages/public/add_or_update/add_or_update",
+    "pages/public/wxUserinfoLogin/wxUserinfoLogin",
     "pages/public/gallery/gallery",
     "pages/public/check_menu_type/check_menu_type",
     "pages/public/appreciate/appreciate",
-    "pages/public/partnership/partnership"
+    "pages/index/nmhs/gyLemon/gyLemon",
+    "pages/public/textbox/textbox",
+    "pages/public/notice/notice",
+    "pages/public/content/content",
+    "pages/index/nmhs/integralTransaction/integralTransaction",
+    "pages/index/nmhs/myInfo/myInfo",
+    "pages/index/nmhs/myInfo/myContribution/myContribution",
+    "pages/index/nmhs/myInfo/myReservation/myReservation"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

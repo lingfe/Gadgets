@@ -11,7 +11,7 @@
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
 
-    <!-- "pages/index/nmhs/index/index",
+    <!-- 
     "pages/index/nmhs/myInfo/myInfo",
     "pages/index/nmhs/myInfo/myReservation/myReservation",
     "pages/index/nmhs/lemonRecovery/admin/admin",

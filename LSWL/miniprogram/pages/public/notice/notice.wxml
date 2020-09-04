@@ -1,0 +1,14 @@
+<!--miniprogram/pages/public/notice/notice.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/menu_content.wxml" />
+
+<view class='page'>
+  <!-- 公告 start -->
+  <view class='menu_heng'>
+    <block wx:for="{{notice_list}}"  wx:key="_id">
+      <template is="type_oblong" data="{{item,img:item.img,name:item.title,url,tab_name }}" />
+    </block>
+  </view>
+  <!-- 广告 end -->
+</view>
+

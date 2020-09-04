@@ -1,0 +1,32 @@
+<!--miniprogram/pages/public/textbox/textbox.wxml-->
+<view class='page'>
+    <navigator url='/pages/findPage/lemonCommonweal/gyDynamic/newsInformation/newsInformation?{{item.id}}'>
+      <view class='neiro_image'>
+        <image class='image' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/hbzs1.jpg?sign=0f77066da603856c276fa830f2c4cdd6&t=1598966336'></image>
+      </view>
+      <view class='neiro_text'>
+        <view class='text_title'>123456{{item.title}}</view>
+        <view class='text_content'>sdfsdfadfasdfa,sdfad独立思考地方士大夫空手道解放，士大夫是快乐的发生纠纷使得开发商地方。{{item.content}}</view>
+      </view>
+    </navigator>
+        <navigator url='/pages/findPage/lemonCommonweal/gyDynamic/newsInformation/newsInformation?{{item.id}}'>
+      <view class='neiro_image'>
+        <image class='image' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/hbzs1.jpg?sign=0f77066da603856c276fa830f2c4cdd6&t=1598966336'></image>
+      </view>
+      <view class='neiro_text'>
+        <view class='text_title'>123456{{item.title}}</view>
+        <view class='text_content'>sdfsdfadfasdfa,sdfad独立思考地方士大夫空手道解放，士大夫是快乐的发生纠纷使得开发商地方。{{item.content}}</view>
+      </view>
+    </navigator>
+  <view class='neiro' wx:for="{{lemonDynamicAll}}" wx:key="*this">
+    <navigator url='/pages/findPage/lemonCommonweal/gyDynamic/newsInformation/newsInformation?{{item.id}}'>
+      <view class='neiro_image'>
+        <image class='image' src='{{item.imgUrl}}'></image>
+      </view>
+      <view class='neiro_text'>
+        <view class='text_title'>{{item.title}}</view>
+        <view class='text_content'>{{item.content}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,21 +1,76 @@
-<!-- 导入资源 -->
-<import src="/pages/assets/form_content.wxml" />
-<import src="/pages/assets/menu_content.wxml" />
-<import src="/pages/assets/list_content.wxml" />
+<!--
+/**
+  path: /assets/wxml/imageText.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: tabs内容，图片与文字布局
+  描述:  
+**/
+-->
 
-<!-- 菜单类型内容 -->
-<template name="menu_type">
-  <template is="{{item.menu_type}}" data="{{item}}" />
+<!--tabs内容，图片与文字布局  start-->
+<template name="content">
+	<!-- 内容标题 -->
+	<view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
+	<!-- 内容content  start -->
+	<view class='pro_content'>
+		<!-- 内容加粗，放在内容首content_bold_first -->
+		<span class='content_bold_first' wx:if="{{pro.bold_first}}">{{pro.bold_first}}</span>
+		<!-- 内容 -->
+		<text wx:if="{{pro.content}}">{{pro.content}}</text>
+		<!-- 内容加粗，放在内容尾 content_bold_tail-->
+		<span class='content_bold_tail' wx:if="{{pro.bold_tail}}">{{pro.bold_tail}}</span>
+		<!-- 内容2,当加粗内容在需要放在中间时使用。 -->
+		<text wx:if="{{pro.content_two}}">{{pro.content_two}}</text>
+		<!-- 图片img -->
+		<wxs src="../../utils/publicWxs.wxs" module="filter" />
+		<view class='image_list' wx:for-item="img" wx:for="{{filter.strZarr(pro.img)}}" wx:key="index">
+			<image mode="widthFix" class='pro_img' src='{{img}}'></image>
+		</view>
+
+		<!-- 图片说明文字text -->
+		<view class='img_text' wx:if="{{pro.img_txt}}">{{pro.img_txt}}</view>
+	</view>
+	<!-- 内容content  end -->
 </template>
+<!-- tabs内容，图片与文字布局  end-->
 
-<!-- 表单字段内容类型 -->
-<template name="field_type">
-  <template is="{{fd.field_type}}" data="{{item}}" />
+<!-- tabs导航菜单内容，个人发布项目内容编辑时 start -->
+<template name='content_add_or_update'>
+				<!-- 操作 start -->
+				<view class='operation'>
+					<!-- 编辑 -->
+					<navigator url="/pages/public/add_or_update/add_or_update?id={{pro._id}}&tab_name=tab_content" 
+					class='operation_view'>编辑</navigator>
+					<!-- 删除 -->
+					<view bindtap='deleteTabaContent' id='{{pro.id}}' class='operation_view'>删除</view>
+					<!-- ... -->
+					<view class='operation_view'>...</view>
+				</view>
+				<!-- 操作 end -->
+				
+				<!-- 内容标题 -->
+				<view class='pro_title' wx:if="{{pro.title}}">{{pro.title}}</view>
+
+				<!-- 内容content  start -->
+				<view class='pro_content'>
+					<!-- 内容加粗，放在内容首content_bold_first -->
+					<span class='content_bold_first' wx:if="{{pro.bold_first}}">{{pro.bold_first}}</span>
+					<!-- 内容 -->
+					<text wx:if="{{pro.content}}">{{pro.content}}</text>
+					<!-- 内容加粗，放在内容尾 content_bold_tail-->
+					<span class='content_bold_tail' wx:if="{{pro.bold_tail}}">{{pro.bold_tail}}</span>
+					<!-- 内容2,当加粗内容在需要放在中间时使用。 -->
+					<text wx:if="{{pro.content_two}}">{{pro.content_two}}</text>
+					<!-- 图片img -->
+					<wxs src="../../utils/publicWxs.wxs" module="filter" />
+					<view class='image_list' wx:for-item="img" wx:for="{{filter.strZarr(pro.img)}}" wx:key="index">
+						<image mode="widthFix" class='pro_img' src='{{img}}'></image>
+					</view>
+
+					<!-- 图片说明文字text -->
+					<view class='img_text' wx:if="{{pro.img_txt}}">{{pro.img_txt}}</view>
+				</view>
+				<!-- 内容content  end -->
 </template>
-
-<!-- list集合内容类型 start -->
-<template name="list">
-  <template is="list_bg" data="{{item}}" />
-</template>
-
-<!-- list集合内容类型 end -->
+<!-- tabs导航菜单内容，个人发布项目内容编辑时 end -->

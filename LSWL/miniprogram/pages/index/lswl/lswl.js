@@ -25,6 +25,16 @@ Page({
     });
   },
 
+  //跳转
+  jump:function(e){
+    var that=this;
+    var menu_id=e.currentTarget.id;
+    wx.setStorageSync('menu_id', menu_id);
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
+
   //查询
   quer: function () {
     const db = wx.cloud.database();

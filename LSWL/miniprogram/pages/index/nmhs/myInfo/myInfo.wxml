@@ -10,8 +10,8 @@
     <view class='huishou_form'>
       <!-- 头像 start-->
       <view class='tx_img' bindtap='userinfoBtntap'>
-        <image src='{{userInfo.avatarUrl}}' class='tx_img_img'/>
-        <view class='tx_img_text'>{{userInfo.cnName}}</view>
+        <image src='{{userinfo.img}}' class='tx_img_img'/>
+        <view class='tx_img_text'>{{userinfo.user_name}}</view>
       </view>
       <!-- 头像 end-->
 
@@ -19,7 +19,7 @@
       <view class='breathing' bindtap='userinfoBtntap'>
         <view class='breathing_breathing'>贡献资源</view>
         <view class='breathing_'>—</view>
-        <view class='breathing_text'>{{myContribution.resourceContribution}}斤</view>
+        <view class='breathing_text'>{{userinfo.nmhs_jin}}斤</view>
       </view>
       <!-- 贡献资源 end-->
 
@@ -27,7 +27,7 @@
       <view class='breathing'>
         <view class='breathing_breathing'>柠檬积分</view>
         <view class='breathing_'>—</view>
-        <view class='breathing_text'>{{myContribution.lemonIntegral}}分</view>
+        <view class='breathing_text'>{{userinfo.integral}}分</view>
       </view>
       <!-- 柠檬积分 end-->
 
@@ -44,12 +44,12 @@
   <view class='myContribution'>
     <view class='myContribution_view'>
       <view class='my' bindtap='bindtapReservation'>
-        <image class='content_img' src='/assets/images/myinfo/my_yy.png' />
+        <image class='content_img' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/my_yy.png?sign=41281ef953b2f2b990dde81e14ab3498&t=1599126148' />
         <view class='content_text'>我的预约</view>
       </view>
       <view class='my_I'>|</view>
       <view class='my' bindtap='bindtabContribtion'>
-        <image class='content_img' src='/assets/images/myinfo/my_gx.png' />
+        <image class='content_img' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/my_gx.png?sign=4af34713cc6e7859e32e16a3bf94baae&t=1599126181' />
         <view class='content_text'>我的贡献</view>
       </view>
     </view>
@@ -66,13 +66,42 @@
           <view class='paixue'>{{index+1}}</view>
           <image class='img' src='{{item.avatarUrl}}' class='img'/>
           <view class='partner_name'>{{item.userName}}</view>
-          <view class='partner_right'>为
-            <span class="span">贵阳市</span>贡献了
+          <view class='partner_right'>
+            为<span class="span">贵阳市</span>贡献了
             <span class="span">{{item.resourceContribution}}</span>斤可回收资源
           </view>
         </view>
         <!-- </swiper-item>  -->
       </block> 
+      <view class='partner_title'>
+          <view class='paixue'>{{1}}</view>
+          <image class='img' src='{{userinfo.img}}' class='img'/>
+          <view class='partner_name'>{{userinfo.user_name}}</view>
+          <view class='partner_right'>
+            为<span class="span">贵阳市</span>贡献了<span class="span">{{userinfo.nmhs_jin}}200</span>斤可回收资源
+          </view>
+        </view>
+        <view class='partner_title'>
+          <view class='paixue'>{{2}}</view>
+          <image class='img' src='{{userinfo.img}}' class='img'/>
+          <view class='partner_name'>{{userinfo.user_name}}</view>
+          <view class='partner_right'>
+            <text>为</text>
+            <span class="span">贵阳市</span>
+            <text>贡献了</text>
+            <span class="span">{{userinfo.nmhs_jin}}198</span>
+            <text>斤可回收资源</text>
+          </view>
+        </view>
+        <view class='partner_title'>
+          <view class='paixue'>{{3}}</view>
+          <image class='img' src='{{userinfo.img}}' class='img'/>
+          <view class='partner_name'>{{userinfo.user_name}}</view>
+          <view class='partner_right'>
+            为<span class="span">贵阳市</span>贡献了
+            <span class="span">{{userinfo.nmhs_jin}}157</span>斤可回收资源
+          </view>
+        </view>
     </view>
   </view>
   <!-- 新的伙伴 end-->
@@ -81,7 +110,7 @@
 <!--二维码 start-->
 <view class='erweima_bg' wx:if="{{erweimaBl==true}}" bindtap='consultationBtntap'>
   <view class='erweima'>
-    <image src='https://static.daho.club/static/upload/LemonRecovery/assets/images/bg.png' class='erweima_img'/>
+    <image src='' class='erweima_img'/>
     <view class='erweima_text'>点击二维码图片预览并保存到本地</view>
     <view class='erweima_text'>添加柠檬公众号</view>
   </view>

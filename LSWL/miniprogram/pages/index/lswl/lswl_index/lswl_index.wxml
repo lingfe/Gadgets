@@ -1,12 +1,12 @@
 <!--miniprogram/pages/index/lswl/lswl_index/lswl_index.wxml-->
 <!-- 导入资源 -->
-<import src="/pages/assets/content.wxml" />
+<import src="/pages/assets/menu_content.wxml" />
 
 <view class="page">
   <!-- 轮播图 start -->
   <swiper class="banner" 
           indicator-dots="true"
-          interval="3000" 
+          interval="5000" 
           autoplay="true" 
           duration="3000"
           circular="true">
@@ -21,7 +21,7 @@
   <!-- 分类菜单 start -->
     <view class="index-menu">
       <block wx:for="{{type_menu}}" wx:key="_id">
-        <template is="menu_type" data="{{item}}" />
+        <template is="{{item.menu_type}}" data="{{item,yw_id}}" />
       </block>
     </view>
   <!-- 分类菜单 end -->

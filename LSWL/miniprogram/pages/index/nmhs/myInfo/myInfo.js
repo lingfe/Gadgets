@@ -8,16 +8,30 @@ var app=getApp();
 
 Page({
   data:{
+    userinfo:wx.getStorageSync('userinfo'),
     admin: ["oh4300CxufSClVEil0k7xNy24P5A", "oNWj80C6zKPwL2_muS08iIVtGhkA", "oh4300DFZdBeIGOoVKQK9OFuyPps", "oh4300BzivzPyMq9Uk05pF_GaVoc","oh4300LBMs6n0ylQ1H3XK1jC90YU"], //管理员
     myContributionAll:[],//贡献数据
     pagenum: 1,              //分页，第几业
     pagesize: 1000,            //返回数据量
   }, 
 
+  //页面加载
+  onLoad:function(options){
+    var that=this;
+
+    //得到地位
+    wx.getLocation({
+      type:'gcj02',
+      success:function(res){
+        console.log(res);
+      }
+    })
+  },
+
   //我的预约
   bindtapReservation:function(e){
     wx.navigateTo({
-      url: "/pages/myInfo/myReservation/myReservation",
+      url: "/pages/index/nmhs/myInfo/myReservation/myReservation",
     })
   },
 
@@ -38,7 +52,7 @@ Page({
   //我的预约
   userinfoBtntap:function(e){
     var that=this;
-    var name = that.data.userInfo.userName;
+    var name = that.data.userinfo.openid;
     var admin=that.data.admin;
     for(var i=0;i<admin.length;++i){
       if (admin[i] == name ) {
@@ -50,14 +64,14 @@ Page({
     }
 
     wx.navigateTo({
-      url: "/pages/myInfo/myReservation/myReservation",
+      url: "/pages/index/nmhs/myInfo/myReservation/myReservation",
     });
   },
 
   //我的贡献
   bindtabContribtion:function(e){
     wx.navigateTo({
-      url: "/pages/myInfo/myContribution/myContribution",
+      url: "/pages/index/nmhs/myInfo/myContribution/myContribution",
     });
   },
 

@@ -73,7 +73,7 @@
   <view class='list' wx:else="{{list.length==0}}">
     <view class='list_item'>
       <view class='list_item_img' >
-        <view class='item_img'>还没有回收记录哦(0_0)</view>
+        <view class='item_img'>还没有记录哦(0_0)</view>
       </view>
     </view>
   </view>
