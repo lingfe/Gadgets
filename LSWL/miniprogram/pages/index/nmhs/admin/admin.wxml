@@ -1,0 +1,130 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-28
+ *   描述:  管理员
+ * 
+ * */-->
+<view class='page'>
+	<!-- tab切换  start -->
+	<view class="weui-tab">
+		<!-- 菜单  start -->
+		<view class="weui-navbar" style="border-bottom:none;">
+			<block wx:for="{{tabs}}" wx:key="*this">
+				<view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}" data-name="{{item}}" bindtap="tabClick">
+					<view class="weui-navbar__title">{{item}}</view>
+				</view>
+			</block>
+			<view class="weui-navbar__slider" style="background-color:#14BAC8;left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+		</view>
+		<!-- 菜单  end -->
+
+		<!-- 内容  start-->
+		<view class="weui-tab__panel">
+			<view class="weui-tab__content">
+				<!-- 预约数据 start -->
+				<!-- 订单数据 start-->
+				<block wx:if="{{list!=null&&list.length!=0}}">
+					<view class='list' wx:for="{{list}}" wx:key="_id">
+						<view class='list_item'>
+							<!-- 状态 start -->
+							<view class='item'>
+								<view class='item_text'>订单编号: {{item._id}}</view>
+							</view>
+							<!-- 状态 start -->
+							<view class='item'>
+								<view class='item_text'>下单时间: {{item.crt_date}}</view>
+								<view class='item_static' wx:if="{{item.state==0}}">
+									<text class='item_static_text green'>已提交</text>
+									<image class='item_static_img' bindtap='bindtapPhone' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/phone.png?sign=32f28f126a8e46c111ad5335ec5812f0&t=1599203062' />
+								</view>
+								<view class='item_static' wx:elif="{{item.state==1}}">
+									<text class='item_static_text purple'>已行动</text>
+									<image class='item_static_img' bindtap='bindtapPhone' src='https://6c69-lingfe-ghw41-1300174515.tcb.qcloud.la/other/phone.png?sign=32f28f126a8e46c111ad5335ec5812f0&t=1599203062' />
+								</view>
+								<view class='item_static' wx:elif="{{item.state==2}}">
+									<text class='item_static_text blue'>已完成</text>
+								</view>
+								<view class='item_static' wx:elif="{{item.state==3}}">
+									<text class='item_static_text red'>已取消</text>
+								</view>
+								<view class='item_static' wx:elif="{{item.state==4}}">
+									<text class='item_static_text grey'>已废弃</text>
+								</view>
+							</view>
+							<!-- 状态 end -->
+
+							<!-- 分界线 -->
+							<view class='item_border'></view>
+
+							<!-- 内容 start -->
+							<view class='item'>
+								<view class='item_text'>您的称呼: {{item.call_name}}</view>
+								<view class='item_text'>联系电话: {{item.call_phone}}</view>
+								<view class='item_text'>预约地点: {{item.call_address}}</view>
+								<view class='item_text'>预约地址: {{item.call_address_details}}</view>
+								<view class='item_text'>预约时间: {{item.call_date}}</view>
+
+								<!-- 操作按钮 start -->
+								<view class='item_btn' wx:if="{{item.state==0}}">
+									<button class='consultation_bottom_btn purple' id='{{item._id}}' data-state="1" bindtap='xingdo'>行动</button>
+									<button class='consultation_bottom_btn grey' id='{{item._id}}' data-state="4" bindtap='feiqi'>废弃</button>
+								</view>
+								<view class="item_btn" wx:elif="{{item.state==1}}">
+									<button class='consultation_bottom_btn blue' id='{{item._id}}' data-state="2" data-crtid='{{item.crt_id}}' bindtap='wancheng'>完成</button>
+								</view>
+								<!-- 操作按钮 end -->
+							</view>
+							<!-- 内容 end -->
+						</view>
+					</view>
+				</block>
+				<!-- 订单数据 end-->
+
+				<!-- 空订单 start-->
+				<view class='list' wx:else>
+					<view class='list_item'>
+						<view class='list_item_img'>
+							<view class='item_img'>还没有预约记录哦(0_0)</view>
+						</view>
+					</view>
+				</view>
+				<!-- 空订单 end-->
+				<!-- 预约数据 start -->
+			</view>
+		</view>
+		<!-- 内容  end-->
+	</view>
+	<!-- tab切换  end-->
+
+	<!-- 计算清单 start-->
+	<view class='Calculationlist' wx:if="{{cst== true}}" id='eixt' bindtap='CalculationlistBindtap'>
+		<form bindsubmit="submitForm">
+			<view class='admin_huishou_form' catchtap="CalculationlistBindtap">
+				<view class='admin_form_frist'>计算清单</view>
+				<view class='admin_form'>
+					<view class='admin_title'>总共</view>
+					<view class='admin_input'>
+						<input name="total" bindinput='inputother' value="{{form.total}}" type='number' placeholder='请输入' />
+					</view>
+					<view class='admin_title'>斤</view>
+				</view>
+
+				<view class='admin_form'>
+					<view class='admin_title'>编号</view>
+					<view class='admin_input'>
+						<input value='{{userinfo._id}}' placeholder='上门回收同事填写' />
+					</view>
+				</view>
+				<input hidden="true" name="yw_id" value="{{call_maa_id}}" />
+				<input hidden="true" name="user_id" value="{{call_maa_crt_id}}" />
+				<view class='admin_form_text'>
+					<view class='admin_text_text_last'>1斤=1分</view>
+					<view class='admin_text_text_right'>合计: <span class="span">{{form.num}}分</span></view>
+				</view>
+
+				<button class='admin_form_last' form-type="submit">确定</button>
+			</view>
+		</form>
+	</view>
+	<!-- 计算清单 end-->
+</view>

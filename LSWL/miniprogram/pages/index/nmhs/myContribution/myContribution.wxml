@@ -1,0 +1,48 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-11-03
+ *   描述:  我的贡献
+ * 
+ * */-->
+<view class='page'>
+  <!-- 我的贡献 总 览 start-->
+  <view class='myContribution'>
+    <view class='myContribution_title'>总 览</view>
+    <view class='myContribution___'></view>
+    <view class='myContribution_view'>
+      <view class='my'>
+        <view class='content_text'>资源贡献</view>
+        <view class='my_feng'>{{userinfo.nmhs_jin}} 斤</view>
+      </view>
+      <view class='my_border'></view>
+      <view class='my'>
+        <view class='content_text'>柠檬积分</view>
+        <view class='my_feng'>{{userinfo.integral}} 分</view></view>
+      <view class='my_border'></view>
+      <view class='my'>
+        <view class='content_text'>城市排名</view>
+        <view class='my_feng'>计算中.. 名</view></view>
+    </view>
+  </view>
+  <!-- 我的贡献 总 览 end-->
+  
+  <!-- 积分纪录 start -->
+  <view class='recyclingRecords'>
+    <view class='recyclingRecords_title'>积分纪录</view>
+    <view class='recyclingRecords_order'>
+      <view class='order_' wx:for="{{list}}" wx:key="*this">
+        <view class='order_data'>
+          <view class='data_datetime'>日期: {{item.crt_date}}</view>
+          <view class='data_wen'>斤数+{{item.total}}、积分+{{item.total}}</view>
+        </view>
+        <view class='order_data'>
+          单号: {{item._id}}
+        </view>
+        <view  class="order_data" style='border-bottom:1rpx solid #aaa;'>
+          预约单号:{{item.yw_id}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 积分纪录 end-->
+</view>

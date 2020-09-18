@@ -1,0 +1,23 @@
+<!--miniprogram/pages/index/lswl/lswl_index/hq_list/hq_list.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/list_content.wxml" />
+
+<view class="page">
+  <!-- 遍历元素 -->
+  <block wx:for="{{queryResult}}" wx:key="_id">
+    <template is="list_bg"  data="{{item,url}}" />
+  </block>
+
+  <!-- 暂无数据 -->
+  <view wx:if='{{queryResult==null || queryResult.length==0}}' 
+  class="model_null">
+    暂无数据
+  </view>
+
+  <!-- 点我创建一个吧 -->
+  <view bindtap="add" 
+  class='btn_3d btn_to' wx:if="{{is_my_add == 1}}">+</view>
+  <!-- 切换为我的 -->
+  <view wx:if="{{ page_data.is_close_my_button == 0}}" bindtap="my"
+  class='btn_3d btn_to'>my</view>
+</view>

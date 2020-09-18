@@ -1,0 +1,10 @@
+<!--miniprogram/pages/index/lswl/lswl.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/menu_content.wxml" />
+
+<view class="page">
+  <!-- 遍历内容 -->
+  <view wx:for="{{queryResult}}" wx:key="_id">
+    <template is="{{item.menu_type}}" data="{{item}}"></template>
+  </view>
+</view>

@@ -1,0 +1,115 @@
+/**  
+ *   作者:  lingfe 
+ *   时间:  2017-11-03
+ *   描述:  我的贡献
+ * 
+ * */
+  page{
+    background-color: #F7F8F3;
+  }
+ /*我的预贡献*/
+.myContribution{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  position:relative;
+  padding-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.myContribution_title{
+  font-size: 26rpx;
+  width: 100%;
+  text-align: center;
+}
+.myContribution___{
+  width: 4%;
+  height: 2rpx;
+  position: relative;
+  top: 16rpx;
+  background-color: #666;
+  margin:auto;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.myContribution_view{
+  width: 90%;
+  top: 10rpx;
+  margin: 0rpx auto;
+  position: relative;
+  height: 170rpx;
+}
+
+.my{
+  position: relative;
+  width: 160rpx;
+  height: 110rpx;
+  font-size: 26rpx;
+  text-align: center;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 35rpx;
+}
+.my_feng{
+  margin-top: 40rpx;
+}
+.my_border{
+  border-left: 1rpx solid #aaa;
+  height: 80rpx;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+
+/*图片*/
+.content_img{
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.content_text{
+  width: auto;
+  font-size: 26rpx;
+  position: relative;
+  color: #666;
+  text-align: center;
+}
+
+
+/*回收纪录*/
+.recyclingRecords{
+  width: 100%;
+  height: auto;
+}
+.recyclingRecords_title{
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+}
+.recyclingRecords_order{
+  width: 100%;
+  background-color: #fff;
+}
+.order_{
+  width: 90%;
+  margin: auto;
+  padding-top:10rpx; 
+  height: 150rpx;
+}
+.order_data{
+  width: 100%;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.data_datetime{
+  float: left;
+    width: 50%;
+    overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis; /**文字隐藏后添加省略号*/
+   white-space: nowrap; /*强制不换行 */
+}
+.data_wen{
+  float: right;
+}

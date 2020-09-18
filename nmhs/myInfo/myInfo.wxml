@@ -1,0 +1,89 @@
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-10-25
+ *   描述:  我的
+ * 
+ * */-->
+<view class="page">
+  <!-- 个人资料 start-->
+  <view class='huishou_bg'>
+    <view class='huishou_form'>
+      <!-- 头像 start-->
+      <view class='tx_img' bindtap='userinfoBtntap'>
+        <image src='{{userInfo.avatarUrl}}' class='tx_img_img'/>
+        <view class='tx_img_text'>{{userInfo.cnName}}</view>
+      </view>
+      <!-- 头像 end-->
+
+      <!-- 贡献资源 start-->
+      <view class='breathing' bindtap='userinfoBtntap'>
+        <view class='breathing_breathing'>贡献资源</view>
+        <view class='breathing_'>—</view>
+        <view class='breathing_text'>{{myContribution.resourceContribution}}斤</view>
+      </view>
+      <!-- 贡献资源 end-->
+
+      <!-- 柠檬积分 start-->
+      <view class='breathing'>
+        <view class='breathing_breathing'>柠檬积分</view>
+        <view class='breathing_'>—</view>
+        <view class='breathing_text'>{{myContribution.lemonIntegral}}分</view>
+      </view>
+      <!-- 柠檬积分 end-->
+
+      <!-- 柠檬咨询 start-->
+      <view class='consultation'>
+        <view class='consultation_text' bindtap='bindtapShow'>咨询柠檬</view>
+      </view>
+      <!-- 柠檬咨询 end-->
+    </view>
+  </view>
+  <!-- 个人资料 end-->
+
+  <!-- 我的贡献 start-->
+  <view class='myContribution'>
+    <view class='myContribution_view'>
+      <view class='my' bindtap='bindtapReservation'>
+        <image class='content_img' src='/assets/images/myinfo/my_yy.png' />
+        <view class='content_text'>我的预约</view>
+      </view>
+      <view class='my_I'>|</view>
+      <view class='my' bindtap='bindtabContribtion'>
+        <image class='content_img' src='/assets/images/myinfo/my_gx.png' />
+        <view class='content_text'>我的贡献</view>
+      </view>
+    </view>
+  </view>
+  <!-- 我的贡献 end-->
+
+  <!-- 新的伙伴 start-->
+  <view class='partner'>
+    <view class='partner_partner' style='letter-spacing:4rpx;'>氧 气 榜 单</view>
+    <view class='partner_partner'>
+       <block wx:for="{{myContributionAll}}" wx:key="*this">
+        <!-- <swiper-item style="height:0%;">      -->
+        <view class='partner_title'>
+          <view class='paixue'>{{index+1}}</view>
+          <image class='img' src='{{item.avatarUrl}}' class='img'/>
+          <view class='partner_name'>{{item.userName}}</view>
+          <view class='partner_right'>为
+            <span class="span">贵阳市</span>贡献了
+            <span class="span">{{item.resourceContribution}}</span>斤可回收资源
+          </view>
+        </view>
+        <!-- </swiper-item>  -->
+      </block> 
+    </view>
+  </view>
+  <!-- 新的伙伴 end-->
+</view>
+
+<!--二维码 start-->
+<view class='erweima_bg' wx:if="{{erweimaBl==true}}" bindtap='consultationBtntap'>
+  <view class='erweima'>
+    <image src='https://static.daho.club/static/upload/LemonRecovery/assets/images/bg.png' class='erweima_img'/>
+    <view class='erweima_text'>点击二维码图片预览并保存到本地</view>
+    <view class='erweima_text'>添加柠檬公众号</view>
+  </view>
+</view>
+<!--二维码 end-->

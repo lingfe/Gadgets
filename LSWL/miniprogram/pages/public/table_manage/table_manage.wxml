@@ -1,0 +1,84 @@
+<!--miniprogram/pages/index/lswl/lswl_data_manage/table_manage/table_manage.wxml-->
+<!-- 导入资源 -->
+<import src="/pages/assets/form_content.wxml" />
+
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2020-7-28
+ *   描述:  表
+ * 
+ * */-->
+<view class='page'>
+  <!-- 表数据 start    -->
+  <view class='list'  wx:if="{{list.length!=0}}">
+    <!-- 编号、状态、内容等 start -->
+    <view class='list_item' wx:for="{{list}}" wx:for-item="info" wx:key="_id"> 
+      <!-- id编号 start -->
+      <view class='item'>
+        <view class='item_text'>id编号: {{info._id}}</view>
+      </view>
+      <!-- id编号 end -->
+
+      <!-- 事件与状态 start -->
+      <view class='item'>
+        <view class='item_text' >
+        创建时间: {{info.crt_date}}</view>
+        <!-- 状态 start -->
+        <view class='item_static' wx:if="{{info.state==0}}">
+          <text class='item_static_text green'>正常</text>
+        </view>
+        <view class='item_static' wx:elif="{{info.state==1}}">
+          <text class='item_static_text grey'>隐藏</text>
+        </view>
+        <!-- 状态 end -->
+      </view>
+      <!-- 事件与状态 end -->
+
+      <!-- 分割线 -->
+      <view class='item_border'></view>
+
+      <!-- 内容 start -->
+      <view class='item'>
+        <view wx:for="{{info.fields}}"
+        wx:for-item="fd" wx:key="_id">
+          <!--  加载元素 -->
+          <template is="{{fd.field_type}}" data="{{fd,info}}" />
+        </view>
+      </view>
+      <!-- 内容 end -->
+
+      <!-- 操作 start -->
+      <view class='item_btn'>
+          <button class='btn red' id='{{info._id}}' 
+            bindtap='bind_delete'>删除</button>
+          <button class='btn grey' id='{{info._id}}' 
+            wx:if="{{info.state == 0}}"
+            data-state='1'
+            bindtap='bind_state'>隐藏</button>
+          <button class='btn green' id='{{info._id}}' 
+            wx:if="{{info.state != 0}}"
+            data-state='0'
+            bindtap='bind_state'>显示</button>
+          <navigator class='btn purple'
+            url="/pages/public/add_or_update/add_or_update?tab_name={{tab_name}}&id={{info._id}}"         
+            >修改</navigator>
+      </view>
+      <!-- 操作 end-->
+    </view>
+    <!-- 编号、状态、内容等 start -->
+  </view>
+  <!-- 表数据 end -->
+
+  <!-- 数据为空 start -->
+  <view class='list' wx:else="{{list.length==0}}">
+    <view class='list_item'>
+      <view class='list_item_img' >
+        <view class='item_img'>还没有记录哦(0_0)</view>
+      </view>
+    </view>
+  </view>
+  <!-- 数据为空 end -->
+
+  <navigator url="/pages/public/add_or_update/add_or_update?tab_name={{tab_name}}&yw_id={{yw_id}}"
+    class='btn_3d btn_to'>+</navigator>
+</view>
