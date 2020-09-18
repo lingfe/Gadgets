@@ -2,7 +2,7 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx4a82967c20ccc576",
@@ -86,9 +86,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl",
-					"pathName": "pages/index/lswl/lswl",
+					"id": 4,
+					"name": "首页",
+					"pathName": "pages/index/index/index",
 					"query": "",
 					"scene": null
 				},
@@ -250,6 +250,14 @@
 					"id": -1,
 					"name": "pages/index/nmhs/myInfo/myInfo",
 					"pathName": "pages/index/nmhs/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/public/wxUserinfoLogin/wxUserinfoLogin",
+					"query": "",
 					"scene": null
 				}
 			]

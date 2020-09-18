@@ -1,26 +1,26 @@
 {
   "pages": [
-    "pages/index/lswl/lswl",
-    "pages/index/lswl/lswl_index/lswl_index",
-    "pages/index/lswl/lswl_index/hq_list/hq_list",
-    "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-    "pages/index/lswl/lswl_index/open_cash_gift/open_cash_gift",
-    "pages/index/lswl/lswl_data_manage/lswl_data_manage",
-    "pages/index/lswl/lswl_data_manage/table_manage/table_manage",
-    "pages/index/lswl/lswl_data_manage/operation/operation",
+    "pages/index/index/index",
+    "pages/index/lswl/hq_list/hq_list",
+    "pages/index/lswl/hq_list_details/hq_list_details",
+    "pages/index/lswl/open_cash_gift/open_cash_gift",
+
+    "pages/index/nmhs/gyLemon/gyLemon",
+    "pages/index/nmhs/integralTransaction/integralTransaction",
+    "pages/index/nmhs/admin/admin",
+    "pages/index/nmhs/myInfo/myInfo",
+    "pages/index/nmhs/myContribution/myContribution",
+    "pages/index/nmhs/myReservation/myReservation",
+
+    "pages/public/table_manage/table_manage",
     "pages/public/add_or_update/add_or_update",
     "pages/public/wxUserinfoLogin/wxUserinfoLogin",
     "pages/public/gallery/gallery",
     "pages/public/check_menu_type/check_menu_type",
-    "pages/public/appreciate/appreciate",
-    "pages/index/nmhs/gyLemon/gyLemon",
-    "pages/public/textbox/textbox",
     "pages/public/notice/notice",
     "pages/public/content/content",
-    "pages/index/nmhs/integralTransaction/integralTransaction",
-    "pages/index/nmhs/myInfo/myInfo",
-    "pages/index/nmhs/myInfo/myContribution/myContribution",
-    "pages/index/nmhs/myInfo/myReservation/myReservation"
+    "pages/public/menu_list/menu_list",
+    "pages/public/data_operation/data_operation"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -29,6 +29,11 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "sitemapLocation": "sitemap.json"
 }

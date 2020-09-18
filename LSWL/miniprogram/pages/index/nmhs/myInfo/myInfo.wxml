@@ -4,6 +4,8 @@
  *   描述:  我的
  * 
  * */-->
+<wxs src="../../../../utils/publicWxs.wxs" module="str" />
+
 <view class="page">
   <!-- 个人资料 start-->
   <view class='huishou_bg'>
@@ -11,12 +13,12 @@
       <!-- 头像 start-->
       <view class='tx_img' bindtap='userinfoBtntap'>
         <image src='{{userinfo.img}}' class='tx_img_img'/>
-        <view class='tx_img_text'>{{userinfo.user_name}}</view>
+        <view class='tx_img_text'>{{str.strSubstring(userinfo.user_name)}}</view>
       </view>
       <!-- 头像 end-->
 
       <!-- 贡献资源 start-->
-      <view class='breathing' bindtap='userinfoBtntap'>
+      <view class='breathing'>
         <view class='breathing_breathing'>贡献资源</view>
         <view class='breathing_'>—</view>
         <view class='breathing_text'>{{userinfo.nmhs_jin}}斤</view>
@@ -60,48 +62,22 @@
   <view class='partner'>
     <view class='partner_partner' style='letter-spacing:4rpx;'>氧 气 榜 单</view>
     <view class='partner_partner'>
-       <block wx:for="{{myContributionAll}}" wx:key="*this">
+       <block wx:for="{{list}}" wx:key="*this">
         <!-- <swiper-item style="height:0%;">      -->
         <view class='partner_title'>
           <view class='paixue'>{{index+1}}</view>
-          <image class='img' src='{{item.avatarUrl}}' class='img'/>
-          <view class='partner_name'>{{item.userName}}</view>
+          <image class='img' src='{{item.img}}' class='img'/>
+          <view class='partner_name'>{{str.strSubstring(item.user_name)}}</view>
           <view class='partner_right'>
-            为<span class="span">贵阳市</span>贡献了
-            <span class="span">{{item.resourceContribution}}</span>斤可回收资源
+            <text>为</text>
+            <span class="span">{{city}}</span>
+            <text>贡献了</text>
+            <span class="span">{{item.nmhs_jin}}</span>
+            <text>斤可回收资源</text>
           </view>
         </view>
         <!-- </swiper-item>  -->
       </block> 
-      <view class='partner_title'>
-          <view class='paixue'>{{1}}</view>
-          <image class='img' src='{{userinfo.img}}' class='img'/>
-          <view class='partner_name'>{{userinfo.user_name}}</view>
-          <view class='partner_right'>
-            为<span class="span">贵阳市</span>贡献了<span class="span">{{userinfo.nmhs_jin}}200</span>斤可回收资源
-          </view>
-        </view>
-        <view class='partner_title'>
-          <view class='paixue'>{{2}}</view>
-          <image class='img' src='{{userinfo.img}}' class='img'/>
-          <view class='partner_name'>{{userinfo.user_name}}</view>
-          <view class='partner_right'>
-            <text>为</text>
-            <span class="span">贵阳市</span>
-            <text>贡献了</text>
-            <span class="span">{{userinfo.nmhs_jin}}198</span>
-            <text>斤可回收资源</text>
-          </view>
-        </view>
-        <view class='partner_title'>
-          <view class='paixue'>{{3}}</view>
-          <image class='img' src='{{userinfo.img}}' class='img'/>
-          <view class='partner_name'>{{userinfo.user_name}}</view>
-          <view class='partner_right'>
-            为<span class="span">贵阳市</span>贡献了
-            <span class="span">{{userinfo.nmhs_jin}}157</span>斤可回收资源
-          </view>
-        </view>
     </view>
   </view>
   <!-- 新的伙伴 end-->

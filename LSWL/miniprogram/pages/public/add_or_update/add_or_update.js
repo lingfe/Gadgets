@@ -51,7 +51,12 @@ Page({
   onLoad: function (options) {
     var that = this;
     var id = options.id;
+    var date=new Date();
+    var year=date.getFullYear();
+    var month=date.getMonth();
+    var day=date.getDay();
     that.setData({
+      startTime:year+"-"+month+"-"+day,
       yw_id: options.yw_id, //业务id
       tab_name: options.tab_name //表名
     });
@@ -141,7 +146,6 @@ Page({
 
     //数据
     var form = e.detail.value;
-    form.crt_date = new Date().toLocaleString(); //创建时间
     if(app.checkInput(form.yw_id)){
       form.yw_id = that.data.yw_id; //业务id
     }
@@ -158,7 +162,9 @@ Page({
   //添加
   add: function (that) {
     that.data.form.state=0;
+    that.data.form.crt_date = new Date().toLocaleString(); //创建时间
     that.data.form.openid=wx.getStorageSync('openid');
+    that.data.form.crt_id=wx.getStorageSync('userinfo')._id;
     //添加
     wx.cloud.callFunction({
       name: 'add',

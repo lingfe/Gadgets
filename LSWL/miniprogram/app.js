@@ -1,6 +1,9 @@
 //app.js
+import service from './utils/server.js'
+
 App({
 
+  service,//位置信息
   
 
   //验证非空

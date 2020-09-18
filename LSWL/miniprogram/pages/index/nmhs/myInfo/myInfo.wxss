@@ -11,8 +11,8 @@
 /*背景*/
 .huishou_bg{
   width: 100%;
-  height: 220rpx;
-  background-image:url(https://static.daho.club/static/upload/LemonRecovery/assets/images/myInfo.jpg);
+  height: 155px;
+  background-image:url(https://fanyiapp.cdn.bcebos.com/cms/image/3d09db8606326410d81da70c064bb79e.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -20,12 +20,12 @@
 /*表单*/
 .huishou_form{
   width: 96%;
-  height:210rpx;
+  height:105px;
   position:relative;
   margin: 0rpx auto;
   background-color: #fff;
-  top: 100rpx;
-  border-radius: 10px;
+  top: 50px;
+  border-radius: 10px 10px 0 0;
 }
 
 /*头像*/
@@ -100,8 +100,7 @@
   width: 100%;
   height: auto;
   background-color: #fff;
-  position:relative;
-  top: 130rpx;
+  margin-top: 20px;
 }
 .myContribution_view{
   width: 90%;
@@ -137,12 +136,10 @@
 .partner{
   display: block;
   width: 100%;
-  position:relative;
-  top: 150rpx;
+  margin-top: 20px;
 }
 .partner_partner{
   position:relative;
-  top: 20rpx;
    width: 100%;
    font-size: 26rpx;
    color: #666;
@@ -155,21 +152,17 @@
 .partner_title{
   width: 90%;
   /* padding-top: 20rpx; */
-  padding-bottom: 20rpx;
-  height: 60rpx;
   position:relative;
   background-color: #fff;
-  bottom: 10rpx;
   margin: auto;
   overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-
-}
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  }
 .paixue{
   color: #14bac8;
   float: left;
-  margin-left: 3%;
   height:60rpx;
   line-height: 60rpx;
 }
@@ -193,7 +186,9 @@ white-space: nowrap;
   float: right;
   line-height: 60rpx;  
   font-size: 26rpx;
-  margin-right: 20rpx;
+  overflow: hidden; /**自动隐藏文字*/
+  text-overflow: ellipsis; /**文字隐藏后添加省略号*/
+  white-space: nowrap; /*强制不换行 */
 }
 
 /*咨询柠檬*/

@@ -4,7 +4,7 @@
 
 <!-- 有背景图片的list -->
 <template name="list_bg">
-	<navigator url="hq_list_details/hq_list_details?id={{item._id}}" style="background-image: url({{item.event_img}});" class="model2" >
+	<navigator url="{{url}}&id={{item._id}}" style="background-image: url({{item.event_img}});" class="model2" >
     <!-- 标题 -->
 		<view class='model2_title'>
 			<view class="model_title_text">{{item.event_name}}</view>

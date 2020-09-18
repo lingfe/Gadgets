@@ -80,7 +80,7 @@ Page({
         josn.josn.img=st.menu_img;
         break;
       case 'tab_sys_table': //表信息表-跳转表信息管理
-        josn.josn.url= '/pages/index/lswl/lswl_data_manage/table_manage/table_manage';
+        josn.josn.url= '/pages/public/table_manage/table_manage';
         josn.josn.tab_name=st.tab_name;
         josn.josn.name=st.tab_cname;
         josn.josn.img='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2143042087,835394292&fm=26&gp=0.jpg';

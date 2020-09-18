@@ -8,7 +8,7 @@
   <view class='top'>
     <!-- 标题 start -->
     <view class='top_title'>
-      {{lemonIntegral}}
+      {{userinfo.integral}}
     </view>
     <!-- 标题 end -->
 

@@ -56,7 +56,7 @@
 <template name="select_date">
 	<view class='form'>
 		<view class='title'>{{item.field_explain}}</view>
-		<picker class='input_other' mode="date" value="{{date}}" start="{{startTime}}" id="{{item._id}}" end="2020-09-01" bindchange="bindPickerChange">
+		<picker class='input_other' mode="date" value="{{date}}" start="{{startTime}}" id="{{item._id}}" end="9999-09-09" bindchange="bindPickerChange">
 			<input disabled='false' name="{{item.field_name}}" value="{{item.field_value}}" type='text' placeholder='{{item.field_placeholder}}' />
 		</picker>
 	</view>

@@ -9,6 +9,6 @@
       <template is="type_oblong" data="{{item,img:item.img,name:item.title,url,tab_name }}" />
     </block>
   </view>
-  <!-- 广告 end -->
+  <!-- 公告 end -->
 </view>
 

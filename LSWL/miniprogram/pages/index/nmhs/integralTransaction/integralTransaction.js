@@ -22,7 +22,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
 
+    //获取用户信息
+    that.getUserInfo(that);
+  },
+
+  //获取用户信息
+  getUserInfo: function (that) {
+    wx.cloud.callFunction({
+      name: "query",
+      data: {
+        tab_name: 'tab_user_info',
+        where: {
+          openid: wx.getStorageSync('openid')
+        }
+      },
+      success: function (user) {
+        console.log(user);
+        if (app.checkInput(user.result.data)) {
+          //不存在,跳转
+          wx.navigateTo({
+            url: '/pages/public/wxUserinfoLogin/wxUserinfoLogin',
+          })
+        } else {
+          var userinfo = user.result.data[0];
+          wx.setStorageSync('userinfo', userinfo);
+          that.setData({
+            userinfo: userinfo
+          });
+        }
+      }
+    })
   },
 
   //帮助
@@ -49,7 +80,7 @@ Page({
   inputcontactPeople: function (e) {
     var that = this;
     var value = e.detail.value;
-    if (!value.replace(/^((\d*[1-9])|(0?\.\d{2}))$/g, '')) {
+    if (!value.replace(/^((\d*[0-9])|(0?\.\d{2}))$/g, '')) {
       that.setData({
         integral: parseFloat(value)
       });
@@ -74,6 +105,10 @@ Page({
   //提交，送分或者收分
   binSbmint: function (e) {
     var that = this;
+    wx.showLoading({
+      title: '处理中..',
+      mask:true
+    })
     //判断送分或者收分
     if (that.data.isBltype == "shou") {
       //收分
@@ -89,6 +124,7 @@ Page({
     //验证非空
     if (app.checkInput(that.data.pwd)) {
       that.showModal("请输入密匙!");
+      wx.hideLoading();
       return;
     }
 
@@ -151,6 +187,7 @@ Page({
           that.update(that);
         } else {
           that.showModal("密匙不存在!");
+          wx.hideLoading();
         }
       }
     })
@@ -164,9 +201,12 @@ Page({
       success: function (res) {
         console.log(res);
         wx.showToast({
-          title: '修改成功！',
+          title: '成功处理！',
           icon: 'none'
         })
+        //获取用户信息
+        wx.hideLoading();
+        that.getUserInfo(that);
       }
     })
   },
@@ -176,6 +216,7 @@ Page({
     //验证非空
     if (app.checkInput(that.data.integral)) {
       that.showModal("请输入积分!");
+      wx.hideLoading();
       return;
     }
 
@@ -183,6 +224,7 @@ Page({
     var user = wx.getStorageSync('userinfo');
     if (parseFloat(user.integral) < integral) {
       that.showModal("您的积分不足!");
+      wx.hideLoading();
       that.setData({
         integral: user.integral
       });
@@ -191,6 +233,7 @@ Page({
 
     if (app.checkInput(that.data.pwd)) {
       that.showModal("请输入密匙!");
+      wx.hideLoading();
       return;
     }
 
@@ -208,7 +251,7 @@ Page({
           wx.showToast({
             title: '密钥重复！请不要设置太简单的密钥，建议使用随机生成！',
             icon: 'none',
-            duration:3000
+            duration: 3000
           })
           return;
         } else {
@@ -278,7 +321,8 @@ Page({
   //提示框
   showModal: function (msg) {
     wx.showModal({
-      title: msg,
+      title: '提示',
+      content:msg,
       showCancel: false,
     });
   },

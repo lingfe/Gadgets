@@ -12,21 +12,9 @@
       获取您的公开信息，如:头像，名称等
     </text>
   </view>
-  <!-- 相关条款  start -->
-  <checkbox-group bindchange="bindAgreeChange" name="isAgree">
-    <label class="weui-agree" for="weuiAgree">
-      <view class="weui-agree__text title">
-        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="true" />
-        <view class="weui-agree__checkbox-icon">
-          <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9"></icon>
-        </view>
-        阅读并同意
-        <navigator url="/pages/dahuo/useProtocol/useProtocol" class="weui-agree__link">《用户使用规则》</navigator>
-      </view>
-    </label>
-  </checkbox-group>
-  <!-- 相关条款  end -->
-  <view class="usermotto">
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="background-color:#14BAC8;border:none;width:239rpx;" type="primary" formType="submit" >确定登录</button>
+
+  <view class="usermotto" bindtap="webStoketReq">
+    <button open-type="getUserInfo" wx:if="{{userinfo.openid == null}}" bindgetuserinfo="getUserInfo" style="font-size: 16px;background-color:#14BAC8;border:none;width:239rpx;" type="primary" formType="submit" >确定登录</button>
+    <button bindtap="fanhui" wx:else  style="font-size: 16px;background-color:green;border:none;width:239rpx;" type="primary" formType="submit" >返回</button>
   </view>
 </view>

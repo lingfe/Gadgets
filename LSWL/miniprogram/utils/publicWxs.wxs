@@ -9,10 +9,14 @@ var item={
   },
   josnZstr:function(josn){
     return JSON.stringify(josn);
-  }
+  },
+  strSubstring:function(value){
+    return value.substring(0,7)+'..';
+  },
 }
 
 module.exports = {
   strZarr:item.strZarr,
-  josnZstr:item.josnZstr
+  josnZstr:item.josnZstr,
+  strSubstring:item.strSubstring
 }
