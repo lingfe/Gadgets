@@ -1,266 +1,270 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"appid": "wx4a82967c20ccc576",
-	"projectname": "LSWL",
-	"libVersion": "2.12.2",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"compileType": "miniprogram",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 5,
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "模块",
-					"pathName": "pages/index/lswl/lswl",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq/hq",
-					"pathName": "pages/index/lswl/lswl_index/hq/hq",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/lswl_index",
-					"pathName": "pages/index/lswl/lswl_index/lswl_index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "首页",
-					"pathName": "pages/index/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 5,
-					"name": "pages/openapi/openapi",
-					"pathName": "pages/openapi/openapi",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq_list/hq_list",
-					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "pages/index/lswl/lswl",
-					"pathName": "pages/index/lswl/lswl",
-					"query": "name=1",
-					"scene": 1007
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq/hq",
-					"pathName": "pages/index/lswl/lswl_index/hq/hq",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/lswl_index",
-					"pathName": "pages/index/lswl/lswl_index/lswl_index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 10,
-					"name": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
-					"pathName": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
-					"pathName": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_data_manage/operation/operation",
-					"pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq_list/hq_list",
-					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq/hq",
-					"pathName": "pages/index/lswl/lswl_index/hq/hq",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_data_manage/operation/operation",
-					"pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
-					"pathName": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/public/add",
-					"pathName": "pages/public/add",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 19,
-					"name": "pages/public/add_or_update/add_or_update",
-					"pathName": "pages/public/add_or_update/add_or_update",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/public/add/add",
-					"pathName": "pages/public/add/add",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages",
-					"pathName": "pages/index/nmhs/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/nmhs/index",
-					"pathName": "pages/index/nmhs/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/nmhs/findPage/findPage",
-					"pathName": "pages/index/nmhs/findPage/findPage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/lswl_index",
-					"pathName": "pages/index/lswl/lswl_index/lswl_index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-					"pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/public/textbox/textbox",
-					"pathName": "pages/public/textbox/textbox",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/nmhs/myInfo/myInfo",
-					"pathName": "pages/index/nmhs/myInfo/myInfo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "登录",
-					"pathName": "pages/public/wxUserinfoLogin/wxUserinfoLogin",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
+  },
+  "appid": "wx4a82967c20ccc576",
+  "projectname": "LSWL",
+  "libVersion": "2.12.2",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "compileType": "miniprogram",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 5,
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "模块",
+          "pathName": "pages/index/lswl/lswl",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq/hq",
+          "pathName": "pages/index/lswl/lswl_index/hq/hq",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/lswl_index",
+          "pathName": "pages/index/lswl/lswl_index/lswl_index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "首页",
+          "pathName": "pages/index/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "pages/openapi/openapi",
+          "pathName": "pages/openapi/openapi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq_list/hq_list",
+          "pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "pages/index/lswl/lswl",
+          "pathName": "pages/index/lswl/lswl",
+          "query": "name=1",
+          "scene": 1007
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq/hq",
+          "pathName": "pages/index/lswl/lswl_index/hq/hq",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/lswl_index",
+          "pathName": "pages/index/lswl/lswl_index/lswl_index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
+          "pathName": "pages/index/lswl/lswl_index/add_cash_gift/add_cash_gift",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
+          "pathName": "pages/index/lswl/lswl_data_manage/lswl_data_manage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_data_manage/operation/operation",
+          "pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq_list/hq_list",
+          "pathName": "pages/index/lswl/lswl_index/hq_list/hq_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq/hq",
+          "pathName": "pages/index/lswl/lswl_index/hq/hq",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_data_manage/operation/operation",
+          "pathName": "pages/index/lswl/lswl_data_manage/operation/operation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+          "pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
+          "pathName": "pages/index/lswl/lswl_index/hq_list/my_hq_list/my_hq_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/public/add",
+          "pathName": "pages/public/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 19,
+          "name": "pages/public/add_or_update/add_or_update",
+          "pathName": "pages/public/add_or_update/add_or_update",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/public/add/add",
+          "pathName": "pages/public/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages",
+          "pathName": "pages/index/nmhs/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/nmhs/index",
+          "pathName": "pages/index/nmhs/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/nmhs/findPage/findPage",
+          "pathName": "pages/index/nmhs/findPage/findPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/lswl_index",
+          "pathName": "pages/index/lswl/lswl_index/lswl_index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+          "pathName": "pages/index/lswl/lswl_index/hq_list/hq_list_details/hq_list_details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/public/textbox/textbox",
+          "pathName": "pages/public/textbox/textbox",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/nmhs/myInfo/myInfo",
+          "pathName": "pages/index/nmhs/myInfo/myInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "登录",
+          "pathName": "pages/public/wxUserinfoLogin/wxUserinfoLogin",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
