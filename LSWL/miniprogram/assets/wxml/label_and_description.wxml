@@ -1,0 +1,36 @@
+
+<!--
+/**
+  path: /assets/wxml/label_and_description.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: 标签+描述
+  描述:  
+**/
+-->
+
+<!-- 标签+描述 用于店铺 -->
+<template name="label_and_description_model1">
+      <view class='model_content'>
+        <!-- 标签 -->
+        <span class="data_biaoqian_view" 
+        wx:for="{{lable_list}}" 
+        wx:key="{{index}}">{{item}}</span>
+      </view>
+</template>
+<!-- 标签+描述 用于店铺 end -->
+
+<!-- 标签+描述 -->
+<template name="label_and_description">
+      <view class='model_content' 
+      style="color:{{color.font_color}};">
+        <!-- 标签 -->
+        <text class="data_biaoqian_view" 
+        style="background:{{color.theme_color}};"
+        wx:for="{{label_list}}" 
+        wx:key="index">{{item}}</text>
+        <!-- 描述 -->
+        <text wx:if="{{describe}}">{{describe}}</text>
+      </view>
+</template>
+<!-- 标签+描述 end -->

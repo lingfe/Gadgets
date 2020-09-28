@@ -1,0 +1,26 @@
+<!--
+/**
+  path: /assets/wxml/lbt.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: 轮播图
+  描述:  
+**/
+-->
+
+<!-- 轮播图 start -->
+<template name="lbt">
+  <swiper class="index-banner" 
+  indicator-dots="true" 
+  interval="5000" 
+  autoplay="true" 
+  duration="3000" 
+  indicator-color="#fff"
+  indicator-active-color="{{color.theme_color}}"
+  circular="true">
+    <swiper-item wx:for="{{images_list}}" wx:key="_id">
+      <image src="{{item.img_url}}" mode="aspectFill" class="slide-image" />
+    </swiper-item>
+  </swiper>
+</template>
+<!-- 轮播图 end -->

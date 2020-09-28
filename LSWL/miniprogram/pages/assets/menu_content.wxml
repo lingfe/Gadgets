@@ -4,7 +4,8 @@
 
 <!-- 菜单默认展示方式，内容有(图片，名称) -->
 <template name="default">
-	<navigator class="index-menu-item" url="{{item.menu_url}}&yw_id={{item._id}}&menu_id={{item._id}}">
+	<navigator class="index-menu-item" 
+	url="{{item.menu_url}}&yw_id={{item._id}}&menu_id={{item._id}}&btn={{item.menu_name}}">
 		<image src="{{item.menu_img}}"></image>
 		<text>{{item.menu_name}}</text>
 	</navigator>

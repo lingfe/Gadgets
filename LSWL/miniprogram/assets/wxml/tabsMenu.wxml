@@ -1,0 +1,39 @@
+<!--
+/**
+  path: /assets/wxml/tabsMenu.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称: tabs菜单切换,导航
+  描述:  
+**/
+-->
+
+<!-- tab切换  start -->
+<template name="tabsMenu">
+  <view class="weui-tab">
+      <!-- 菜单  start -->
+      <view class="weui-navbar" style='column-count: {{info.tabs_list.length}};'>
+        <!-- 操作 start -->
+        <block wx:if="{{openid==info.openid}}">
+          <!-- 添加该资源tabs导航菜单 -->
+          <navigator class="weui-navbar__item" 
+          url="/pages/public/add_or_update/add_or_update?tab_name=tab_tabs&yw_id={{info._id}}">+</navigator>
+          <!-- 编辑该资源tabs导航菜单 -->
+          <navigator wx:if="{{activeIndex>=0}}" class="weui-navbar__item"
+            url="/pages/public/add_or_update/add_or_update?tab_name=tab_tabs&id={{info.tabs_list[activeIndex]._id}}">edit</navigator>
+          <!-- 删除该资源tabs导航菜单 -->
+          <navigator wx:if="{{activeIndex>=0}}" class="weui-navbar__item" 
+            url="/pages/public/data_operation/data_operation?tab_name=tab_tabs&id={{info.tabs_list[activeIndex]._id}}&btn=delete">-</navigator>
+        </block>
+        <!-- 操作 end -->
+        <view id="{{item._id}}"  wx:for="{{info.tabs_list}}" wx:key="_id"
+          class="weui-navbar__item {{activeIndex == index ? 'select_text' : ''}}"
+          data-index="{{index}}" bindtap="tabClick"
+          style="color:{{activeIndex == index ? color.theme_color : ''}}">
+            {{item.tabs_name}}
+        </view>
+      </view>
+      <!-- 菜单  end -->
+  </view>
+</template>
+<!-- tab切换 end -->

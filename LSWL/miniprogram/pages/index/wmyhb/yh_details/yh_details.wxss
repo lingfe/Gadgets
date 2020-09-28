@@ -1,0 +1,19 @@
+/* miniprogram/pages/index/wmyhb/yh_details.wxss */
+
+.page{
+  width: 100%;
+}
+.yh_userinfo{
+  width: 90%;
+  margin: auto;
+}
+.img6{
+  width: 60%;
+  margin: auto;
+}
+.user_name{
+  font-size: 26px;
+}
+.center{
+  text-align: center;
+}

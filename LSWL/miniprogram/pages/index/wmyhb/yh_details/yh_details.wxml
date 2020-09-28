@@ -1,0 +1,7 @@
+<!--miniprogram/pages/index/wmyhb/yh_details.wxml-->
+<view class="page">
+  <view class="yh_userinfo">
+    <image class="img6" src="https://yuehui2.nosdn.127.net/31/31/24/8b0234dfc23dd5ac8edcc8f39bf4acc2/700292431/1538117835179?imageView&crop=30_17_848_942&thumbnail=250x278"/>
+    <view class="user_name center">王小小</view>
+  </view>
+</view>

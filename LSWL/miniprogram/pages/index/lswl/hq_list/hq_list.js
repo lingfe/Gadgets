@@ -22,8 +22,32 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+
+    //下一步（跳转页面）
+    var next=options.next;
+    var btn=options.btn;
+    var url='/pages/public/detail/detail?1=1';
+    var tab_name="";
+    switch (next) {
+      case "lswl"://礼尚往来
+        //next='/pages/index/lswl/hq_list_details/hq_list_details?tab_name=tab_my_event';
+        tab_name="tab_my_event";
+        break;
+      case "wmyhb"://我们约会吧
+        tab_name="tab_my_event";
+        break;
+      default:
+        next="默认";
+        break;
+    }
+    url+="&tab_name="+tab_name;//数据表
+    url+="&next="+next; //下一步指示
+    url+="&bottom="+btn;//底部展示
+
+    //初始化值
     that.setData({
       yw_id: options.menu_id,
+      url:url,
       where: { //条件
         yw_id: options.menu_id,
         iskaifang: "1",

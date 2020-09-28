@@ -1,0 +1,64 @@
+<!--pages/indexTo/yeHuo/yeHuoDetail/yeHuoDetail.wxml-->
+<!--/**  
+ *   作者:  lingfe 
+ *   时间:  2017-12-7
+ *   描述:  野货详细信息
+ * 
+ * */-->
+ 
+<!-- 导入资源 -->
+<import src="/assets/wxml/bottom.wxml" />
+<import src="/assets/wxml/imageText.wxml" />
+<import src="/assets/wxml/lbt.wxml" />
+<import src="/assets/wxml/label_and_description.wxml" />
+<import src="/assets/wxml/infoSources.wxml" />
+<import src="/assets/wxml/tabsMenu.wxml" />
+
+<view class='page' 
+  bindtap='doubleClick' 
+  id="{{info.like_id}}"
+  data-state="{{info.is_like}}"
+  style="background:{{color.theme_color}};color:{{color.font_color}}" >
+
+  <!-- 参数 start -->
+  <view class='neiro_model' >
+      <!-- 轮播图 start -->
+      <template is="lbt" data="{{images_list:info.images_list,color}}" />
+      <!-- 轮播图 end -->
+
+      <!-- 标题 -->
+      <view class='model_title'
+        style="color:{{color.font_color}}">{{info.title}}</view>
+
+      <!-- 标签+描述 -->
+      <template is="label_and_description" data="{{...info,color}}" />
+      <!-- 标签+描述 end -->
+  </view>
+  <!-- 参数 end -->
+
+  <!-- 信息来源  start -->
+  <template is="infoSources" data="{{...info,color}}" />
+  <!-- 信息来源  end -->
+
+  <!-- tab切换  start -->
+  <template is="tabsMenu" data="{{info,openid,color,activeIndex,sliderLeft,sliderOffset}}" />
+  <!-- tab切换 end -->
+
+  <!-- tabs内容，图片与文字布局  start-->
+  <template is="imageText" data="{{info,color,openid,content_list}}" />
+  <!-- tabs内容，图片与文字布局  end-->
+
+  <!-- 底部 start -->
+  <template is="{{bottom}}" data="{{info,color}}" />
+  <!-- 底部 end -->
+
+  <!-- 操作 -->
+  <view wx:if="{{openid == info.openid }}">
+    <navigator style="background:{{color.theme_color}}"
+      url="/pages/public/add_or_update/add_or_update?tab_name=tab_my_event&id={{info._id}}" 
+      class='btn_3d btn_to up'>up</navigator>
+    <navigator style="background:{{color.theme_color}}"
+      url="/pages/public/data_operation/data_operation?tab_name=tab_my_event&id={{info._id}}&btn=delete"
+      class='btn_3d btn_to del'>del</navigator>
+	</view>
+</view>

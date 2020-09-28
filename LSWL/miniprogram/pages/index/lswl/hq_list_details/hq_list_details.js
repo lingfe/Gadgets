@@ -155,7 +155,7 @@ Page({
       })
   },
 
-  //保存查看
+  //保存查看/浏览记录
   save_browse: function (that) {
     //获取用户设备信息
     wx.getSystemInfo({

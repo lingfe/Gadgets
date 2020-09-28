@@ -1,0 +1,159 @@
+<!--
+/**
+  path: /assets/wxml/bottom.wxml
+  作者:  lingfe 
+  时间:  2018-09-26
+  名称:  底部
+  描述:  
+**/
+-->
+<!-- 白事 -->
+<template name="白事">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">默哀</view>
+    </view>
+</template>
+
+<!-- 红事 -->
+<template name="红事">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">恭喜</view>
+    </view>
+</template>
+
+<!-- 满月 -->
+<template name="满月">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">恭喜</view>
+    </view>
+</template>
+
+<!-- 升学 -->
+<template name="升学">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">祝贺</view>
+    </view>
+</template>
+
+<!-- 大寿 -->
+<template name="大寿">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">祝贺</view>
+    </view>
+</template>
+
+<!-- 购买水果 -->
+<template name="购买水果">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">来2斤</view>
+    </view>
+</template>
+
+<!-- 其他 -->
+<template name="其他">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'
+      style="background:{{color.theme_color}};">其他</view>
+    </view>
+</template>
+
+
+  <!-- 底部 start -->
+  <template name="bottom">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' 
+        id="{{info.like_id}}"
+        data-state="{{info.is_like}}"
+        src="/assets/images/ico/ax{{info.is_like}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'>来2斤</view>
+    </view>
+  </template>
+  <!-- 底部 end -->
+
+  <!-- 底部_商铺 start -->
+  <template name="bottom_model1">
+    <view class='dibu'>
+      <view class='img_info'>
+        <image bindtap='bindtabAX' src="/assets/images/ico/ax{{ax}}.png"></image>
+      </view>
+      <view class='img_info' style='float:right;margin-right:4%;'>
+        <button open-type='share' class='button'><image src="/assets/images/ico/icon_zf.png"></image></button>
+      </view>
+      <view bindtap='btn_navigate' class='dibu_btn_false'>选好了</view>
+    </view>
+  </template>
+  <!-- 底部_商铺 end -->
